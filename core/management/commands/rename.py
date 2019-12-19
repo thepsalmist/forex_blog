@@ -10,7 +10,7 @@ class Command(BaseCommand):
             "current", type=str, nargs="+", help="The current django project name"
         )
         parser.add_argument(
-            "new", type=srt, nargs="+", help="The new djangoproject name"
+            "new", type=str, nargs="+", help="The new djangoproject name"
         )
 
     def handle(self, *args, **kwargs):
