@@ -98,15 +98,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-MEDIA_URL = "/media/"
+STATIC_URL = "/static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
 
 # TinyMCE Configuration
-
-
 TINYMCE_DEFAULT_CONFIG = {
     "height": 360,
     "width": 1120,

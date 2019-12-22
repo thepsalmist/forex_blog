@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Category, Author
 
 
 @admin.register(Post)
@@ -11,4 +11,14 @@ class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ("author",)
     date_hierachy = "publish"
     ordering = ("status", "publish")
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ("title",)
+
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ("user",)
 

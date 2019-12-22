@@ -1,8 +1,697 @@
-{% extends "blog/base.html" %}
-
+{% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
-<div class="container">
-    <h2>This is it </h2>
+<body>
+{% include "blog/header.html" %}
+<div class="page-wrapper">
 
+    <!--Main Slider Two-->
+    <section class="main-slider-two">
+    	<div class="single-item-carousel owl-carousel owl-theme"> 
+            <!--Slide-->
+            {% for post in posts %}
+            <div class="slide">
+                <div class="clearfix">
+                    <!--Slide Column-->
+                    {% if forloop.counter == 1%}
+                    <div class="slide-column col-lg-6 col-md-12 col-sm-12">
+                        <!--News Block Three-->
+                        <div class="news-block-three style-two">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <img src="{% static 'images/resource/news-15.jpg' %}" alt="" />
+                                    <div class="overlay-box">
+                                        <div class="content">
+                                            <div class="tag"><a href="blog-single.html">{{post.category}}</a></div>
+                                            <h3><a href="blog-single.html">{{post.title}}</a></h3>
+                                            <ul class="post-meta">
+                                                <li><span class="icon qb-clock"></span>{{post.created}}</li>
+                                                <li><span class="icon fa fa-comment-o"></span>{{post.comment_count}}</li>
+                                                <li><span class="icon qb-eye"></span>{{post.view_count}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Slide Column-->
+                    {% else %}
+                    <div class="slide-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+                            {% if forloop.counter == 2%}
+                        	<div class="inner-slide col-lg-12 col-md-12 col-sm-12">
+                            	<!--News Block Three-->
+                                
+                            </div>
+                            {% elif forloop.counter == 3 %}
+                            <div class="inner-slide col-lg-6 col-md-6 col-sm-12">
+                            	<!--News Block Three-->
+                            
+                            </div>
+                            {% elif forloop.counter == 4 and not forloop.last%}
+                            <div class="inner-slide col-lg-6 col-md-6 col-sm-12">
+                            	<!--News Block Three-->
+                               
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>    
+            {% endfor %}
+        </div>
+        
+    </section>
+    <!--End Main Slider Two-->
+    
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+            	
+                <!--Content Side-->
+                <div class="content-side pull-right col-lg-8 col-md-12 col-sm-12">
+					
+                    <!--Economics Blog Boxed-->
+                    <div class="economics-category">
+                    	<!--Sec Title-->
+                        <div class="sec-title">
+                        	<h2>Economics</h2>
+                        </div>
+                        <div class="economics-items-carousel owl-carousel owl-theme">
+                        
+                            <div class="slide">
+                            	<div class="row clearfix">
+                                <div class="column col-lg-6 col-md-6 col-sm-12">
+                                
+                                    <!--News Block Two-->
+                                    <div class="news-block-two with-margin">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="blog-single.html"><img src="images/resource/news-5.jpg" alt="" /></a>
+                                                <div class="category"><a href="blog-single.html">Sports</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="blog-single.html">Wooden skyscrapers are springing up across the world universal</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>March 26, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>3</li>
+                                                    <li><span class="icon fa fa-eye"></span>7420</li>
+                                                </ul>
+                                                <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-5.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">Wooden skyscrapers are springing up across the world</a></div>
+                                        <div class="post-info">August 16, 2017</div>
+                                    </article>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-6.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">New York state and california are also close to cracking</a></div>
+                                        <div class="post-info">August 17, 2017</div>
+                                    </article>
+                                    
+                                 </div>
+                            
+                                <div class="column col-lg-6 col-md-6 col-sm-12">
+                                
+                                    <!--News Block Two-->
+                                    <div class="news-block-two with-margin">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="blog-single.html"><img src="images/resource/news-6.jpg" alt="" /></a>
+                                                <div class="category"><a href="blog-single.html">Design</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="blog-single.html">A great personality in the world, What he use for his personality ?</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>March 27, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>4</li>
+                                                    <li><span class="icon fa fa-eye"></span>5740</li>
+                                                </ul>
+                                                <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-7.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">Critics of sites like Airbnb have long claimed that the remove</a></div>
+                                        <div class="post-info">August 18, 2017</div>
+                                    </article>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-8.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">Six of the displaced Food filed a lawsuit against</a></div>
+                                        <div class="post-info">August 19, 2017</div>
+                                    </article>
+                                    
+                                 </div>
+                                </div>
+                            </div>
+                        
+                            <div class="slide">
+                            	<div class="row clearfix">
+                                <div class="column col-lg-6 col-md-6 col-sm-12">
+                                
+                                    <!--News Block Two-->
+                                    <div class="news-block-two with-margin">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="blog-single.html"><img src="images/resource/news-5.jpg" alt="" /></a>
+                                                <div class="category"><a href="blog-single.html">Sports</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="blog-single.html">Wooden skyscrapers are springing up across the world universal</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>March 26, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>3</li>
+                                                    <li><span class="icon fa fa-eye"></span>7420</li>
+                                                </ul>
+                                                <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-5.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">Wooden skyscrapers are springing up across the world</a></div>
+                                        <div class="post-info">August 16, 2017</div>
+                                    </article>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-6.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">New York state and california are also close to cracking</a></div>
+                                        <div class="post-info">August 17, 2017</div>
+                                    </article>
+                                    
+                                 </div>
+                            
+                                <div class="column col-lg-6 col-md-6 col-sm-12">
+                                
+                                    <!--News Block Two-->
+                                    <div class="news-block-two with-margin">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="blog-single.html"><img src="images/resource/news-6.jpg" alt="" /></a>
+                                                <div class="category"><a href="blog-single.html">Design</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="blog-single.html">A great personality in the world, What he use for his personality ?</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>March 27, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>4</li>
+                                                    <li><span class="icon fa fa-eye"></span>5740</li>
+                                                </ul>
+                                                <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-7.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">Critics of sites like Airbnb have long claimed that the remove</a></div>
+                                        <div class="post-info">August 18, 2017</div>
+                                    </article>
+                                    
+                                    <!--Widget Post-->
+                                    <article class="widget-post">
+                                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-8.jpg" alt=""></a></figure>
+                                        <div class="text"><a href="blog-single.html">Six of the displaced Food filed a lawsuit against</a></div>
+                                        <div class="post-info">August 19, 2017</div>
+                                    </article>
+                                    
+                                 </div>
+                                </div>
+                            </div>
+                            
+                            <div class="slide">
+                            	<div class="row clearfix">
+                                    <div class="column col-lg-6 col-md-6 col-sm-12">
+                                    
+                                        <!--News Block Two-->
+                                        <div class="news-block-two with-margin">
+                                            <div class="inner-box">
+                                                <div class="image">
+                                                    <a href="blog-single.html"><img src="images/resource/news-5.jpg" alt="" /></a>
+                                                    <div class="category"><a href="blog-single.html">Sports</a></div>
+                                                </div>
+                                                <div class="lower-box">
+                                                    <h3><a href="blog-single.html">Wooden skyscrapers are springing up across the world universal</a></h3>
+                                                    <ul class="post-meta">
+                                                        <li><span class="icon fa fa-clock-o"></span>March 26, 2017</li>
+                                                        <li><span class="icon fa fa-comment-o"></span>3</li>
+                                                        <li><span class="icon fa fa-eye"></span>7420</li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-5.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">Wooden skyscrapers are springing up across the world</a></div>
+                                            <div class="post-info">August 16, 2017</div>
+                                        </article>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-6.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">New York state and california are also close to cracking</a></div>
+                                            <div class="post-info">August 17, 2017</div>
+                                        </article>
+                                        
+                                     </div>
+                                
+                                    <div class="column col-lg-6 col-md-6 col-sm-12">
+                                    
+                                        <!--News Block Two-->
+                                        <div class="news-block-two with-margin">
+                                            <div class="inner-box">
+                                                <div class="image">
+                                                    <a href="blog-single.html"><img src="images/resource/news-6.jpg" alt="" /></a>
+                                                    <div class="category"><a href="blog-single.html">Design</a></div>
+                                                </div>
+                                                <div class="lower-box">
+                                                    <h3><a href="blog-single.html">A great personality in the world, What he use for his personality ?</a></h3>
+                                                    <ul class="post-meta">
+                                                        <li><span class="icon fa fa-clock-o"></span>March 27, 2017</li>
+                                                        <li><span class="icon fa fa-comment-o"></span>4</li>
+                                                        <li><span class="icon fa fa-eye"></span>5740</li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-7.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">Critics of sites like Airbnb have long claimed that the remove</a></div>
+                                            <div class="post-info">August 18, 2017</div>
+                                        </article>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-8.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">Six of the displaced Food filed a lawsuit against</a></div>
+                                            <div class="post-info">August 19, 2017</div>
+                                        </article>
+                                        
+                                     </div>
+                                 </div>
+                            </div>
+                        
+                            <div class="slide">
+                            	<div class="row clearfix">
+                                    <div class="column col-lg-6 col-md-6 col-sm-12">
+                                    
+                                        <!--News Block Two-->
+                                        <div class="news-block-two with-margin">
+                                            <div class="inner-box">
+                                                <div class="image">
+                                                    <a href="blog-single.html"><img src="images/resource/news-5.jpg" alt="" /></a>
+                                                    <div class="category"><a href="blog-single.html">Sports</a></div>
+                                                </div>
+                                                <div class="lower-box">
+                                                    <h3><a href="blog-single.html">Wooden skyscrapers are springing up across the world universal</a></h3>
+                                                    <ul class="post-meta">
+                                                        <li><span class="icon fa fa-clock-o"></span>March 26, 2017</li>
+                                                        <li><span class="icon fa fa-comment-o"></span>3</li>
+                                                        <li><span class="icon fa fa-eye"></span>7420</li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-5.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">Wooden skyscrapers are springing up across the world</a></div>
+                                            <div class="post-info">August 16, 2017</div>
+                                        </article>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-6.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">New York state and california are also close to cracking</a></div>
+                                            <div class="post-info">August 17, 2017</div>
+                                        </article>
+                                        
+                                     </div>
+                            
+                                    <div class="column col-lg-6 col-md-6 col-sm-12">
+                                    
+                                        <!--News Block Two-->
+                                        <div class="news-block-two with-margin">
+                                            <div class="inner-box">
+                                                <div class="image">
+                                                    <a href="blog-single.html"><img src="images/resource/news-6.jpg" alt="" /></a>
+                                                    <div class="category"><a href="blog-single.html">Design</a></div>
+                                                </div>
+                                                <div class="lower-box">
+                                                    <h3><a href="blog-single.html">A great personality in the world, What he use for his personality ?</a></h3>
+                                                    <ul class="post-meta">
+                                                        <li><span class="icon fa fa-clock-o"></span>March 27, 2017</li>
+                                                        <li><span class="icon fa fa-comment-o"></span>4</li>
+                                                        <li><span class="icon fa fa-eye"></span>5740</li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque penatibus et magnis dis montesti, nascetur ridiculus mus. Donec quam…</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-7.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">Critics of sites like Airbnb have long claimed that the remove</a></div>
+                                            <div class="post-info">August 18, 2017</div>
+                                        </article>
+                                        
+                                        <!--Widget Post-->
+                                        <article class="widget-post">
+                                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-8.jpg" alt=""></a></figure>
+                                            <div class="text"><a href="blog-single.html">Six of the displaced Food filed a lawsuit against</a></div>
+                                            <div class="post-info">August 19, 2017</div>
+                                        </article>
+                                        
+                                     </div>
+                                 </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Category-->
+                    <br><br>
+                    <!--Adds Section-->
+                    <section class="adds-block text-center">
+                    	<div class="image">
+                        	<a href="#"><img src="images/resource/header-add.jpg" alt="" /></a>
+                        </div>
+                    </section>
+                    <!--End Adds Section-->
+                    <br><br>
+                    <!--Featured Block Section-->
+                    <section class="featured-block-section">
+                    	<!--Sec Title-->
+                        <div class="sec-title">
+                            <h2>Featured Videos</h2>
+                        </div>
+                        <div class="single-item-carousel owl-carousel owl-theme">
+                        	
+                            <!--News Block Three-->
+                            <div class="news-block-three style-three">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="images/resource/news-19.jpg" alt="" />
+                                        <div class="overlay-box">
+                                            <a href="blog-single.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
+                                            <div class="content">
+                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
+                                                <h3><a href="blog-single.html">Develop a new Silk Road through Russia Study the New Digital Course</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
+                                                    <li><span class="icon qb-eye"></span>740</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--News Block Three-->
+                            <div class="news-block-three style-three">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="images/resource/news-19.jpg" alt="" />
+                                        <div class="overlay-box">
+                                            <a href="blog-single.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
+                                            <div class="content">
+                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
+                                                <h3><a href="blog-single.html">Develop a new Silk Road through Russia Study the New Digital Course</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
+                                                    <li><span class="icon qb-eye"></span>740</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--News Block Three-->
+                            <div class="news-block-three style-three">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="images/resource/news-19.jpg" alt="" />
+                                        <div class="overlay-box">
+                                            <a href="blog-single.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
+                                            <div class="content">
+                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
+                                                <h3><a href="blog-single.html">Develop a new Silk Road through Russia Study the New Digital Course</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
+                                                    <li><span class="icon qb-eye"></span>740</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </section>
+                    <!--End Featured Block Section-->
+                    
+                    
+                </div>
+                
+                <!--Sidebar Side-->
+                <div class="sidebar-side pull-left col-lg-4 col-md-12 col-sm-12">
+                	<aside class="sidebar default-sidebar left-sidebar">
+						
+                        <!-- Search -->
+                        <div class="sidebar-widget search-box">
+                        	<form method="post" action="http://ary-themes.com/html/noor_tech/newspoint/contact.html">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" value="" placeholder="Search" required>
+                                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                                </div>
+                            </form>
+						</div>
+                        
+                        <!--Category Widget-->
+                        <div class="sidebar-widget categories-widget">
+                            <div class="sidebar-title">
+                                <h2>Categories</h2>
+                            </div>
+                            <ul class="cat-list">
+                            	<li class="clearfix"><a href="#">Travel <span>(30)</span></a></li>
+                                <li class="clearfix"><a href="#">Entertainment<span>(9)</span></a></li>
+                                <li class="clearfix"><a href="#">Sport<span>(13)</span></a></li>
+                                <li class="clearfix"><a href="#">Life Style<span>(70)</span></a></li>
+                                <li class="clearfix"><a href="#">Tech<span>(11)</span></a></li>
+                                <li class="clearfix"><a href="#">Money<span>(5)</span></a></li>
+                                <li class="clearfix"><a href="#">Photo<span>(14)</span></a></li>
+                            </ul>
+                        </div>
+                        <!--End Category Widget-->
+                        
+                    	<!--Social Widget-->
+                        <div class="sidebar-widget sidebar-social-widget">
+                            <div class="sidebar-title">
+                                <h2>Follow Us</h2>
+                            </div>
+                            <ul class="social-icon-one alternate">
+                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                <li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                <li class="g_plus"><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                <li class="linkedin"><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
+                                <li class="pinteret"><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
+                                <li class="android"><a href="#"><span class="fa fa-android"></span></a></li>
+                                <li class="instagram"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                                <li class="vimeo"><a href="#"><span class="fa fa-vimeo"></span></a></li>
+                            </ul>
+						</div>
+                    	<!--End Social Widget-->
+                    
+                    	<!--Adds Widget-->
+                        <div class="sidebar-widget sidebar-adds-widget">
+                        	<div class="adds-block" style="background-image:url(images/resource/add-image-2.jpg);">
+                            	<div class="inner-box">
+                                	<div class="text">Advertisement <span> 340 x 283</span></div>
+                                    <a href="#" class="theme-btn btn-style-two">Purchase Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Ends Adds Widget-->
+                        
+                        <!--News Post Widget-->
+                        <div class="sidebar-widget posts-widget">
+                        	<!--Product widget Tabs-->
+                            <div class="product-widget-tabs">
+                                <!--Product Tabs-->
+                                <div class="prod-tabs tabs-box">
+                                
+                                    <!--Tab Btns-->
+                                    <ul class="tab-btns tab-buttons clearfix">
+                                        <li data-tab="#prod-popular" class="tab-btn active-btn">Popular</li>
+                                        <li data-tab="#prod-recent" class="tab-btn">Recent</li>
+                                        <li data-tab="#prod-comment" class="tab-btn">Comments</li>
+                                    </ul>
+                                    
+                                    <!--Tabs Container-->
+                                    <div class="tabs-content">
+                                        
+                                        <!--Tab / Active Tab-->
+                                        <div class="tab active-tab" id="prod-popular">
+                                            <div class="content">
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">Historical Placed & his photoshopped</a></div>
+                                                    <div class="post-info">April 01, 2017</div>
+                                                </article>
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">the Poor Man use cycling for is Business improvement</a></div>
+                                                    <div class="post-info">April 02, 2017</div>
+                                                </article>
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">American Black Film Festival New projects from film TV</a></div>
+                                                    <div class="post-info">April 03, 2017</div>
+                                                </article>
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-4.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">Amy Schumer swaps lives with Anna Wintour</a></div>
+                                                    <div class="post-info">April 04, 2017</div>
+                                                </article>
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-9.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">Historical Placed & his photoshopped</a></div>
+                                                    <div class="post-info">April 26, 2017</div>
+                                                </article>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Tab-->
+                                        <div class="tab" id="prod-recent">
+                    						<div class="content">
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">the Poor Man use cycling for is Business improvement</a></div>
+                                                    <div class="post-info">April 02, 2017</div>
+                                                </article>
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">American Black Film Festival New projects from film TV</a></div>
+                                                    <div class="post-info">April 03, 2017</div>
+                                                </article>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Tab-->
+                                        <div class="tab" id="prod-comment">
+                                            <div class="content">
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">American Black Film Festival New projects from film TV</a></div>
+                                                    <div class="post-info">April 03, 2017</div>
+                                                </article>
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-4.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">Amy Schumer swaps lives with Anna Wintour</a></div>
+                                                    <div class="post-info">April 04, 2017</div>
+                                                </article>
+                                                
+                                                <article class="widget-post">
+                                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                    <div class="text"><a href="blog-single.html">Historical Placed & his photoshopped</a></div>
+                                                    <div class="post-info">April 01, 2017</div>
+                                                </article>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                            <!--End Product Info Tabs-->
+                        </div>
+                        <!--End Post Widget-->
+                        
+                    </aside>
+               	</div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <!--End Sidebar Page Container-->
+    
+    <!--Subscribe Style One-->
+    <section class="subscribe-style-one">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+				
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <h2>Newsletter Subscribe</h2>
+                    <div class="text">Sign up today for hints, tips and the latest product news.</div>
+                </div>
+				
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <form method="post" action="http://ary-themes.com/html/noor_tech/newspoint/contact.html">
+                        <div class="form-group clearfix">
+                            <input type="email" name="email" value="" placeholder="Enter Email Address" required>
+                            <button type="submit" class="theme-btn btn-style-four">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+				
+            </div>
+        </div>
+    </section>
+	<!--End Subscribe Style One-->
+    
+
+    
 </div>
-{% endblock content%}
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+{% include 'blog/footer.html' %}
+</body>
+{% endblock content %}
+
