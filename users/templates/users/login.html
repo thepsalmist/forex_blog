@@ -1,0 +1,55 @@
+{% extends "blog/base.html"%}
+{% block content %}
+
+<body>
+    {% include "blog/header.html" %}
+    <div class="checkout-page">
+        <div class="auto-container">
+            <!--Billing Details-->
+            <div class="billing-details">
+                <div class="shop-form">
+                    <form method="post" action=".">
+                        <div class="row clearfix">
+
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-lg-offset-2">
+                                <div class="sec-title">
+                                    <h2>Login</h2>
+                                </div>
+                                <div class="billing-inner">
+                                    <div class="row clearfix">
+
+                                        <!--Form Group-->
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <div class="field-label">Username<sup>*</sup></div>
+                                            <input type="text" name="field-name" value="" placeholder="Username">
+                                        </div>
+                                        <!--Form Group-->
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <div class="field-label">Password<sup>*</sup></div>
+                                            <input type="text" name="field-name" value="" placeholder="Password">
+                                        </div>
+
+                                        <button type="button"
+                                            class="theme-btn btn-style-four order-btn ml-3">Login</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <!--End Billing Details-->
+            <!--Default Links-->
+            <ul class="default-links">
+                <li>Need an account? <a href="#">Click here to signup</a></li>
+            </ul>
+
+        </div>
+    </div>
+    {% include "blog/footer.html"%}
+</body>
+
+{% endblock %}

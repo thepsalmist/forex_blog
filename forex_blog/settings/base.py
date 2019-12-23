@@ -27,6 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # Application definition
 
 INSTALLED_APPS = [
+    "users.apps.UsersConfig",
     "blog.apps.BlogConfig",
     "core.apps.CoreConfig",
     "django.contrib.admin",

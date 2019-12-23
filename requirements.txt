@@ -4,8 +4,13 @@ attrs==19.3.0
 black==19.10b0
 Click==7.0
 Django==3.0.1
+django-crispy-forms==1.8.1
 django-debug-toolbar==2.1
+django-tinymce==2.8.0
+django-tinymce4-lite==1.7.5
+jsmin==2.2.2
 pathspec==0.6.0
+Pillow==6.2.1
 python-decouple==3.3
 pytz==2019.3
 regex==2019.12.19
