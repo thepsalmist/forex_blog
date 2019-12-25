@@ -1,0 +1,261 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<!--Sidebar Page Container-->
+
+<body>
+    {% include "blog/header.html" %}
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!--Content Side-->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    <div class="content">
+                        <div class="blog-single">
+                            <div class="inner-box">
+                                <div class="upper-box">
+                                    <ul class="breadcrumb-bar">
+                                        <li><a href="{% url 'blog:home' %}">Home</a></li>
+                                        <li>Featured</li>
+                                        <li>Movies: Midnight Special delivers a new short trailer</li>
+                                    </ul>
+                                    <ul class="tag-title">
+                                        <li>Featured</li>
+                                        <li>Travel</li>
+                                    </ul>
+                                    <h2>{{post.title}}</h2>
+                                    <ul class="post-meta">
+                                        <li><span class="icon qb-clock"></span>{{post.publish}}</li>
+                                        <li><span class="icon qb-user2"></span>by {{post.author}}</li>
+                                        <li><span class="icon fa fa-comment-o"></span>{{post.comment_count}} comments
+                                        </li>
+                                        <li><span class="icon qb-eye"></span>{{post.view_count}} Views</li>
+                                    </ul>
+                                    <ul class="social-icon-one alternate">
+                                        <li class="share">Share:</li>
+                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                        <li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                        <li class="g_plus"><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                        <li class="linkedin"><a href="#"><span class="fa fa-linkedin-square"></span></a>
+                                        </li>
+                                        <li class="pinteret"><a href="#"><span class="fa fa-pinterest-p"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="text">
+                                    <p>{{post.body|linebreaks}}</p>
+
+                                </div>
+                                <!--post-share-options-->
+                                <div class="post-share-options">
+                                    <div class="tags clearfix"><a href="#">Design</a> <a href="#">Fashion</a> <a
+                                            href="#">Money</a></div>
+                                </div>
+
+                                <!--New Article-->
+                                <ul class="new-article clearfix">
+                                    <li><a href="#"><span class="fa fa-angle-left"></span> &ensp; &ensp; &ensp; &ensp;
+                                            Previous Article</a></li>
+                                    <li><a href="#">Next Article &ensp; &ensp; &ensp; &ensp; <span
+                                                class="fa fa-angle-right"></span></a></li>
+                                </ul>
+                            </div>
+                            <!--Related Posts-->
+                            <div class="related-posts">
+                                <div class="sec-title">
+                                    <h2>Related Articles</h2>
+                                </div>
+                                <div class="related-item-carousel owl-carousel owl-theme">
+
+                                    <!--News Block Two-->
+                                    <div class="news-block-two small-block">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="#"><img src="images/resource/news-40.jpg" alt="" /></a>
+                                                <div class="category"><a href="#">Travel</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="#">Elon Musk's Hyperloop vision races toward</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>April 03, 2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--News Block Two-->
+                                    <div class="news-block-two small-block">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="#"><img src="images/resource/news-41.jpg" alt="" /></a>
+                                                <div class="category"><a href="#">Sports</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="#">A modern day security strategy</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>April 04, 2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--News Block Two-->
+                                    <div class="news-block-two small-block">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="#"><img src="images/resource/news-42.jpg" alt="" /></a>
+                                                <div class="category">photo</div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="#">Fix an Exchange Rate today</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>April 04, 2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--News Block Two-->
+                                    <div class="news-block-two small-block">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="#"><img src="images/resource/news-40.jpg" alt="" /></a>
+                                                <div class="category"><a href="#">Travel</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="#">Elon Musk's Hyperloop vision races</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>April 03, 2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--News Block Two-->
+                                    <div class="news-block-two small-block">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="#"><img src="images/resource/news-41.jpg" alt="" /></a>
+                                                <div class="category"><a href="#">Sports</a></div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="#">A modern day security strategy</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>April 04, 2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--News Block Two-->
+                                    <div class="news-block-two small-block">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <a href="#"><img src="images/resource/news-42.jpg" alt="" /></a>
+                                                <div class="category">photo</div>
+                                            </div>
+                                            <div class="lower-box">
+                                                <h3><a href="#">Fix an Exchange Rate now with</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon fa fa-clock-o"></span>April 04, 2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Comments Area-->
+                            <div class="comments-area">
+                                <div class="sec-title">
+                                    <h2>2 Comments</h2>
+                                </div>
+                                <!--Comment Box-->
+                                <div class="comment-box">
+                                    <div class="comment">
+                                        <div class="author-thumb"><img src="images/resource/author-2.jpg" alt=""></div>
+                                        <div class="comment-inner">
+                                            <div class="comment-info">Sandra Mavic</div>
+                                            <div class="post-date">March 03, 2017</div>
+                                            <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                                doli.
+                                                Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque
+                                                penatibus et magnis dis parturient montesti, nascetur ridiculus mus.
+                                                Donec
+                                                qam penatibus et magnis .</div>
+                                            <a href="#" class="reply-btn">Reply</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Comment Box-->
+                                <div class="comment-box reply-comment">
+                                    <div class="comment">
+                                        <div class="author-thumb"><img src="images/resource/author-1.jpg" alt=""></div>
+                                        <div class="comment-inner">
+                                            <div class="comment-info">George Belly</div>
+                                            <div class="post-date">March 03, 2017</div>
+                                            <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                                doli.
+                                                Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque
+                                                penatibus et magnis dis parturient montesti, nascetur ridiculus mus.
+                                                Donec
+                                                qam penatibus et magnis .</div>
+                                            <a href="#" class="reply-btn">Reply</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Comment Form -->
+                            <div class="comment-form">
+
+                                <div class="sec-title">
+                                    <h2>Leave a comment</h2>
+                                </div>
+                                <!--Comment Form-->
+                                <form method="post" action="http://ary-themes.com/html/noor_tech/newspoint/blog.html">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-4 col-md-6 col-sm-12 form-group">
+                                            <input type="text" name="username" placeholder="Name ..." required>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 form-group">
+                                            <input type="email" name="email" placeholder="Email ..." required>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12 form-group">
+                                            <input type="text" name="website" placeholder="Website ..." required>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                            <textarea name="message" placeholder="Message ..."></textarea>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                            <button class="theme-btn" type="submit" name="submit-form">Submit
+                                                Comment</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+
+                            </div>
+                            <!--End Comment Form -->
+
+                        </div>
+                    </div>
+                </div>
+                <!--Sidebar Side-->
+                {% include "blog/sidebar.html" with categories=categories %}
+
+            </div>
+
+        </div>
+    </div>
+    <!--End Sidebar Page Container-->
+    {% include "blog/footer.html" %}
+</body>
+
+{% endblock content %}

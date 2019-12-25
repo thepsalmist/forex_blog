@@ -8,7 +8,6 @@
     <div class="header-top-two">
         <div class="auto-container">
             <div class="clearfix">
-
                 <!--Top Left-->
                 <div class="top-left">
                     <!--social-icon-->
@@ -25,13 +24,17 @@
 
                 <!--Top Right-->
                 <div class="top-right clearfix">
-
                     <!-- Search -->
-                    <div class="search-box">
+                    <div class="login-box">
                         <form method="post" action=" ">
                             <div class="form-group">
-                                <input type="search" name="search-field" value="" placeholder="Search" required>
-                                <button type="submit"><span class="icon fa fa-search"></span></button>
+
+                                <a href="{% url 'login' %}" class="btn btn-lg">
+                                    Login <span class="fa fa-behance"></span>
+                                </a>
+                                <a href="{% url 'register' %}" class="btn">
+                                    <span>SignUp</span>
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -83,7 +86,7 @@
                     <div class="row">
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current"><a href="#">Home</a></li>
+                                <li class="current"><a href="{% url 'blog:home'%}">Home</a></li>
 
                             </ul>
                         </div>

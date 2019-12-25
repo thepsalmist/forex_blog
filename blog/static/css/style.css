@@ -824,6 +824,10 @@ img{
 	font-weight:normal;
 	background:none;
 }
+.header-top-two .top-right .login-box .form-group a{
+	color: #ffffff;
+	font-size: 16px;
+}
 
 /*Header Top Three*/
 
@@ -2900,7 +2904,7 @@ img{
 
 .sidebar-page-container{
 	position:relative;
-	padding:100px 0px 100px;
+	padding:50px 0px 100px;
 }
 
 .sidebar-page-container.style-two{
