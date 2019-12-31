@@ -15,14 +15,15 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ("user", "post", "comment", "created", "active")
+    list_display = ("user", "post", "body", "created", "active")
     list_filter = ("active", "created", "updated")
-    search_fields = ("user", "comment")
+    search_fields = ("user", "body")
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("title",)
+    list_display = ("title", "slug")
+    prepopulated_fields = {"slug": ("title",)}
 
 
 @admin.register(Author)

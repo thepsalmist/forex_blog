@@ -2,6 +2,7 @@ from django.db import models
 from tinymce import models as tinymce_models
 from django.utils import timezone
 from django.urls import reverse
+from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 
 
@@ -28,9 +29,13 @@ class Category(models.Model):
     title = models.CharField(
         choices=CATEGORY_CHOICES, max_length=100, default="currency"
     )
+    slug = models.SlugField(max_length=200, db_index=True)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("blog:post_list_by_category", args=[self.slug])
 
 
 class Post(models.Model):
@@ -49,10 +54,11 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="draft")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
-    view_count = models.IntegerField(default=1)
-    comment_count = models.IntegerField(default=1)
+    view_count = models.IntegerField(default=0)
+    comment_count = models.IntegerField(default=0)
     objects = models.Manager()
     published = PublishedManager()
+    tags = TaggableManager()
 
     class Meta:
         ordering = ("-publish",)
@@ -70,7 +76,7 @@ class Post(models.Model):
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
-    comment = models.TextField()
+    body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)

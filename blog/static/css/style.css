@@ -976,13 +976,28 @@ img{
 	position:relative;
 	top:4px;
 	color:#D51820;
-	font-weight:700;
-	font-size:75px;
+	font-weight:900;
+	font-size:48px;
 	line-height:1em;
-	float:left;
+	/* float:left; */
 	text-transform:uppercase;
 }
-
+.main-header .logo-outer .logo .next{
+	position: relative;
+	top: 4px;
+	color: #000000;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1em;
+}
+.main-header .logo-outer .logo .last{
+	position: relative;
+	top: 4px;
+	color: #D51820;
+	font-weight: 900;
+	font-size: 40px;
+	line-height: 1em;
+}
 .main-header .logo-outer .logo a{
 	position:relative;
 	display:inline-block;
@@ -995,7 +1010,8 @@ img{
 
 .main-header .header-upper .upper-right{
 	position:relative;
-	padding-top:55px;
+	padding-top:28px;
+	padding-bottom: 20px;
 }
 
 .header-style-three .header-upper .upper-right{
@@ -1614,6 +1630,9 @@ img{
     height: 2px;
 	margin-left:-30px;
     background-color:#D51820;
+}
+.sec-title button{
+	background-color:#D51820 ;
 }
 
 /*Blog Section*/
@@ -2562,10 +2581,6 @@ img{
     text-align: left;
     top: 0;
     width: 36px;
-}
-
-.hidden-bar .hidden-bar-wrapper .sidebar-search .form-group button:hover{
-	
 }
 
 .hidden-bar .hidden-bar-wrapper .sidebar-search .form-group button span {
@@ -5677,7 +5692,7 @@ img{
 	font-size:13px;
 	letter-spacing:1px;
 	text-transform:uppercase;
-	background-color:#a1a1a1;
+	background-color:#D51820;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -5686,7 +5701,7 @@ img{
 }
 
 .comment-form button:hover{
-	background-color:#D51820;
+	background-color:#a1a1a1;
 }
 
 /*Blog Single Gallery*/

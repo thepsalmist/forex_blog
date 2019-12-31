@@ -1,6 +1,7 @@
 {% extends "blog/base.html"%}
-{% block content %}
 {% load crispy_forms_tags %}
+{% block content %}
+
 
 <body>
     {% include "blog/header.html" %}
@@ -9,7 +10,7 @@
             <!--Billing Details-->
             <div class="billing-details">
                 <div class="shop-form">
-                    <form method="post" action="http://ary-themes.com/html/noor_tech/newspoint/checkout.html">
+                    <form method="POST" action=".">
                         {% csrf_token %}
                         <div class="row clearfix">
                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -17,8 +18,16 @@
                                     <h2>Register</h2>
                                 </div>
                                 <div class="billing-inner">
+                                    <!-- <div>
+                                        {{form|crispy}}
+                                        <div>
+                                            <button type="submit">Signup</button>
+                                        </div>
+                                    </div> -->
+
                                     <div class="row clearfix">
                                         <!-- Form Group-->
+
                                         <div class="form-group col-lg-8 col-md-6 col-sm-12 ">
                                             {{form.username|as_crispy_field}}
                                             <!-- <div class="field-label">Username<sup>*</sup></div>
@@ -42,11 +51,12 @@
                                             {{form.password2|as_crispy_field}}
                                         </div>
                                         <div class="form-grou[ col-lg-8 col-md-6 col-sm-12">
-                                            <button type="button"
+                                            <button type="submit"
                                                 class="theme-btn btn-style-four order-btn ">Signup</button>
                                         </div>
 
                                     </div>
+
                                 </div>
                             </div>
                         </div>

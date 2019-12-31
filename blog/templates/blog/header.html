@@ -1,9 +1,6 @@
-<!-- Preloader -->
-<!-- <div class="preloader"></div> -->
-
+{% load static %}
 <!-- Main Header -->
 <header class="main-header">
-
     <!-- Header Top Two-->
     <div class="header-top-two">
         <div class="auto-container">
@@ -28,13 +25,18 @@
                     <div class="login-box">
                         <form method="post" action=" ">
                             <div class="form-group">
-
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}" class="btn btn-lg">
+                                    Logout <span class="fa fa-behance"></span>
+                                </a>
+                                {% else %}
                                 <a href="{% url 'login' %}" class="btn btn-lg">
                                     Login <span class="fa fa-behance"></span>
                                 </a>
                                 <a href="{% url 'register' %}" class="btn">
                                     <span>SignUp</span>
                                 </a>
+                                {% endif %}
                             </div>
                         </form>
                     </div>
@@ -46,27 +48,25 @@
         </div>
     </div>
     <!-- Header Top End -->
-
     <!--Header-Upper-->
     <div class="header-upper">
         <div class="auto-container">
             <div class="inner-container clearfix">
-
                 <div class="pull-left logo-outer">
-                    <div class="logo"><a href="index.html"><span class="letter">n</span><img src="images/logo.png"
-                                alt="" /></a></div>
+                    <div class="logo"><a href="{% url 'blog:home' %}">
+                            <span class="letter">Q</span><span class="next">uant</span><span class="last">fx</span><span
+                                class="next">.</span>
+                        </a></div>
                 </div>
                 <div class="pull-right upper-right clearfix">
                     <div class="add-image">
-                        <a href="#"><img src="images/resource/header-add.jpg" alt="" /></a>
+                        <a href="#"><img src="{% static 'images/resource/header-add.jpg' %}" alt="" /></a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
     <!--End Header Upper-->
-
     <!--Header Lower-->
     <div class="header-lower">
         <div class="auto-container">
@@ -98,10 +98,7 @@
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
-
                     </div>
-
-
                 </nav>
                 <!-- Hidden Nav Toggler -->
                 <div class="nav-toggler">
@@ -137,44 +134,11 @@
 
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
                         <ul class="navigation clearfix">
-                            <li class="current dropdown"><a href="#">Home</a>
-                                <ul>
-                                    <li><a href="index-1.html">Home 01</a></li>
-                                    <li><a href="index-2.html">Home 02</a></li>
-                                    <li><a href="index-3.html">Home 03</a></li>
-                                    <li class="dropdown"><a href="#">Header Styles</a>
-                                        <ul>
-                                            <li><a href="index-1.html">Header 01</a></li>
-                                            <li><a href="index-2.html">Header 02</a></li>
-                                            <li><a href="index-3.html">Header 03</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">About Us</a>
-                                <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="about-2.html">About Us Two</a></li>
-                                    <li><a href="faq.html">Faq</a></li>
-                                    <li><a href="error-page.html">Error Page</a></li>
-                                    <li><a href="comming-soon.html">Comming Soon</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">Projects</a>
-                                <ul>
-                                    <li><a href="project-threecolumn.html">Projects 3 Column</a></li>
-                                    <li><a href="project-fourcolumn.html">Projects 4 Column</a></li>
-                                    <li><a href="project-fullscreen.html">Projects Full Screen</a></li>
-                                    <li><a href="project-detail.html">Projects Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">Blog</a>
-                                <ul>
-                                    <li><a href="blog.html">Our blog</a></li>
-                                    <li><a href="blog-sidebar.html">blog Sidebar</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Market News</a></li>
+                            <li><a href="">Analysis</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Contact Us</a></li>
                             <li class="dropdown"><a href="#">Shop</a>
                                 <ul>
                                     <li><a href="shop.html">Shop</a></li>
@@ -183,7 +147,6 @@
                                     <li><a href="checkout.html">Checkout Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->
@@ -212,53 +175,11 @@
         <div class="side-menu">
             <!--navigation-->
             <ul class="navigation clearfix">
-                <li class="current dropdown"><a href="#">Home</a>
-                    <ul>
-                        <li><a href="index-1.html">Home 01</a></li>
-                        <li><a href="index-2.html">Home 02</a></li>
-                        <li><a href="index-3.html">Home 03</a></li>
-                        <li class="dropdown"><a href="#">Header Styles</a>
-                            <ul>
-                                <li><a href="index-1.html">Header 01</a></li>
-                                <li><a href="index-2.html">Header 02</a></li>
-                                <li><a href="index-3.html">Header 03</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#">About Us</a>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="about-2.html">About Us Two</a></li>
-                        <li><a href="faq.html">Faq</a></li>
-                        <li><a href="error-page.html">Error Page</a></li>
-                        <li><a href="comming-soon.html">Comming Soon</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#">Projects</a>
-                    <ul>
-                        <li><a href="project-threecolumn.html">Projects 3 Column</a></li>
-                        <li><a href="project-fourcolumn.html">Projects 4 Column</a></li>
-                        <li><a href="project-fullscreen.html">Projects Full Screen</a></li>
-                        <li><a href="project-detail.html">Projects Details</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#">Blog</a>
-                    <ul>
-                        <li><a href="blog.html">Our blog</a></li>
-                        <li><a href="blog-sidebar.html">blog Sidebar</a></li>
-                        <li><a href="blog-single.html">Blog Single</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#">Shop</a>
-                    <ul>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="shop-single.html">Shop Details</a></li>
-                        <li><a href="shoping-cart.html">Cart Page</a></li>
-                        <li><a href="checkout.html">Checkout Page</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{%url 'blog:home' %}">Home</a></li>
+                <li><a href="">Market News</a></li>
+                <li><a href="">Analysis</a></li>
+                <li><a href="">Education</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
         <!-- /.Side-menu -->
@@ -267,7 +188,7 @@
         <div class="options-box">
             <!--Sidebar Search-->
             <div class="sidebar-search">
-                <form method="post" action="http://ary-themes.com/html/noor_tech/newspoint/contact.html">
+                <form method="post" action="">
                     <div class="form-group">
                         <input type="search" name="text" value="" placeholder="Search ..." required="">
                         <button type="submit" class="theme-btn"><span class="fa fa-search"></span></button>

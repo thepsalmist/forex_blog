@@ -1,0 +1,27 @@
+{% extends "blog/base.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<body>
+    {% include "blog/header.html" %}
+    <div class="checkout-page">
+        <div class="auto-container">
+            <!--Billing Details-->
+            <div class="billing-details">
+                <div class="shop-form">
+                    <div class="sec-title">
+                        <h2>You have logged out</h2>
+                    </div>
+                    <ul class="default-links">
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--End Billing Details-->
+        </div>
+    </div>
+    {% include "blog/footer.html"%}
+</body>
+
+{% endblock %}
