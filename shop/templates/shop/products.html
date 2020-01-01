@@ -1,0 +1,291 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content%}
+
+<body>
+    {% include "blog/header.html"%}
+    <!--Page Title-->
+    <section class="page-title">
+        <div class="auto-container">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <h2>Elegant Shop</h2>
+                </div>
+                <div class="pull-right">
+                    <ul class="page-title-breadcrumb">
+                        <li><a href="#"><span class="fa fa-home"></span>Home</a></li>
+                        <li><a href="#">Advertisement</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+    <!--Shop Section-->
+    <section class="shop-section">
+        <div class="auto-container">
+
+            <!--Sort By-->
+            <div class="items-sorting">
+                <div class="row clearfix">
+                    <div class="select-column col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group">
+                            <select name="sort-by">
+                                <option>Sort by Default Order</option>
+                                <option>By Order</option>
+                                <option>By Price</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="results-column pull-right col-lg-8 col-md-8 col-sm-12">
+                        <h4>Showing 1–12 of 23 results</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!--Shop Items-->
+            <div class="shop-items">
+                <div class="row clearfix">
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="off-price">-30%</div>
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/1.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Summer Business <br> Blouse</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price">$42.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/2.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Orange Style <br> Trousers</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$75.00</span> $42.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="sold-out">sold Out</div>
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/3.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Sport mountain <br> Dress</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price">$199.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/4.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Pleasant Shirt <br> Design</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$109.00</span> $72.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/5.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Sport mountain <br> Dress</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$109.00</span> $25.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="off-price">-15%</div>
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/6.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Pleasant Shirt <br> Design</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$92.00</span> $17.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/7.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Orange Style <br> Trousers</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price">$205.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="off-price">-15%</div>
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/8.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Summer Business <br> Blouse</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$55.00</span> $12.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/9.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Summer Business <br> Blouse</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$75.00</span> $42.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/10.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Summer Business <br> Blouse</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$75.00</span> $42.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="sold-out">sold Out</div>
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/11.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Sport mountain <br> Dress</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price">$199.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shop Item-->
+                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="shop-single.html"><img src="images/resource/products/12.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="shop-single.html">Pleasant Shirt <br> Design</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price"><span class="discount-price">$109.00</span> $72.00</div>
+                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Styled Pagination -->
+                <div class="styled-pagination centered">
+                    <ul class="clearfix">
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a class="next" href="#"><span class="fa fa-angle-right"></span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--End Shop Section-->
+    {% include "blog/footer.html" %}
+</body>
+{% endblock %}

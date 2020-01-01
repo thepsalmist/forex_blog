@@ -27,6 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # Application definition
 
 INSTALLED_APPS = [
+    "shop.apps.ShopConfig",
     "users.apps.UsersConfig",
     "blog.apps.BlogConfig",
     "core.apps.CoreConfig",
@@ -105,7 +106,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
-
 
 # TinyMCE Configuration
 TINYMCE_DEFAULT_CONFIG = {

@@ -568,13 +568,28 @@ img{
 	position: relative;
     top: 10px;
     color: #D51820;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 30px;
     line-height: 1em;
     float: left;
     text-transform: uppercase;
 }
-
+.fixed-header .sticky-header .logo .next{
+	position: relative;
+	top: 10px;
+	color: #000000;
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 1em;
+}
+.fixed-header .sticky-header .logo .last{
+	position: relative;
+	top: 10px;
+	color: #D51820;
+	font-weight: 900;
+	font-size: 30px;
+	line-height: 1em;
+}
 .fixed-header .main-menu .navigation > li:hover > a:after,
 .fixed-header .main-menu .navigation > li > a:before{
 	display:none;
@@ -2168,14 +2183,29 @@ img{
 	position: relative;
     top: 2px;
     color: #D51820;
-    font-weight: 700;
-    font-size: 75px;
+    font-weight: 900;
+    font-size: 48px;
     line-height: 1em;
     float: left;
 	margin-right:2px;
     text-transform: uppercase;
 }
-
+.main-footer .footer-bottom .logo .next{
+	position: relative;
+	top: 4px;
+	color: #ffffff;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1em;
+}
+.main-footer .footer-bottom .logo .last{
+	position: relative;
+	top: 4px;
+	color: #D51820;
+	font-weight: 900;
+	font-size: 40px;
+	line-height: 1em;
+}
 .main-footer .footer-bottom .logo a{
 	position:relative;
 	display:inline-block;
@@ -2443,10 +2473,6 @@ img{
 	margin-top:-1px;
 	width:30px;
 	border-bottom:2px solid #c5a47e;
-}
-
-.hidden-bar .side-menu ul.navigation > li.dropdown > a{
-	
 }
 
 .hidden-bar .side-menu ul.navigation > li > ul > li.dropdown > a{
@@ -2971,10 +2997,10 @@ img{
 
 .adds-block .inner-box{
 	position:relative;
-	padding:80px 0px;
+	padding:0px 0px;
 	text-align:center;
-	outline-offset: -12px;
-	outline: 2px solid rgba(255,255,255,0.80);
+	/* outline-offset: -12px;
+	outline: 2px solid rgba(255,255,255,0.80); */
 }
 
 .adds-block .inner-box:before{
@@ -2985,7 +3011,7 @@ img{
 	width:100%;
 	height:100%;
 	display:block;
-	background-color:rgba(0,0,0,0.50);
+	/* background-color:rgba(0,0,0,0.50); */
 }
 
 .adds-block .inner-box .text{

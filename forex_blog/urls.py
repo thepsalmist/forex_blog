@@ -22,6 +22,7 @@ from users import views as user_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("shop/", include("shop.urls", namespace="shop")),
     path("", include("blog.urls", namespace="blog")),
     path("tinymce/", include("tinymce.urls")),
     path("register/", user_views.register, name="register"),

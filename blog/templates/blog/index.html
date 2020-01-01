@@ -7,44 +7,7 @@
     <div class="page-wrapper">
 
         <!--Main Slider Two-->
-        <section class="main-slider-two">
-            <div class="single-item-carousel owl-carousel owl-theme">
-                <!--Slide-->
-                <div class="slide">
-                    <div class="clearfix">
-                        {% for post in latest_posts %}
-                        <div class="slide-column col-lg-3 col-md-12 col-sm-12">
-                            <div class="news-block-three style-two">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{% static 'images/resource/news-15.jpg' %}" alt="" />
-                                        <div class="overlay-box">
-                                            <div class="content">
-                                                <div class="tag"><a href="blog-single.html">{{post.category}}</a></div>
-                                                <h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
-                                                <ul class="post-meta">
-                                                    <li><span class="icon qb-clock"></span>{{post.publish}}</li>
-                                                    <li><span class="icon fa fa-comment-o"></span>{{post.comment_count}}
-                                                    </li>
-                                                    <li><span class="icon qb-eye"></span>{{post.view_count}}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% if forloop.counter|divisibleby:4 and not forloop.last %}
-                        <div class="slide-column col-lg-4 col-md-12 col-sm-12">
-                            {%endif%}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-
-        </section>
         <!--End Main Slider Two-->
         <!--Sidebar Page Container-->
         <div class="sidebar-page-container">
@@ -56,7 +19,7 @@
                         <div class="content">
                             <!--Sec Title-->
                             <div class="sec-title">
-                                <h2>Recent Articles</h2>
+                                <h2>Featured Articles</h2>
                             </div>
                             <div class="row clearfix">
                                 <!--News Block One-->

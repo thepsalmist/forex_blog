@@ -98,6 +98,11 @@
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li><a href="{% url 'shop:shop_products' %}">Shop</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
                 <!-- Hidden Nav Toggler -->
@@ -115,10 +120,10 @@
     <div class="sticky-header">
         <div class="auto-container clearfix">
             <!--Logo-->
-            <div class="logo pull-left">
-                <a href="index.html" title=""><span class="letter">n</span><img src="images/logo-small.png"
-                        alt="" /></a>
-            </div>
+            <div class="logo pull-left"><a href="{% url 'blog:home' %}">
+                    <span class="letter">Q</span><span class="next">uant</span><span class="last">fx</span><span
+                        class="next">.</span>
+                </a></div>
 
             <!--Right Col-->
             <div class="right-col pull-right">
