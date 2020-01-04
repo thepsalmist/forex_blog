@@ -4,7 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Forex Alchemy | Home </title>
+    {% if title %}
+    <title>Quantfx | {{title}} </title>
+    {% else %}
+    <title>Quantfx | The best forex resources</title>
+    {% endif %}
     <!-- Stylesheets -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">

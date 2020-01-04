@@ -17,24 +17,24 @@ def post_list(request, category_slug=None):
     posts = Post.published.all()
     latest_posts = Post.published.order_by("-publish")[:4]
     categories = Category.objects.all()
-    category = None
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-        posts = posts.filter(category=category)
+    # category = None
+    # if category_slug:
+    #     category = get_object_or_404(Category, slug=category_slug)
+    #     posts = posts.filter(category=category)
+
     paginator = Paginator(posts, 6)
-    page_variable = request.GET.get("page")
+    page = request.GET.get("page")
     try:
-        posts = paginator.page(page_variable)
-    except EmptyPage:
-        posts = paginator.page(1)
+        posts = paginator.page(page)
     except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
     context = {
         "posts": posts,
         "categories": categories,
-        "category": category,
-        "page_variable": page_variable,
+        "page": page,
         "latest_posts": latest_posts,
     }
     return render(request, "blog/index.html", context)
