@@ -49,6 +49,9 @@ class Post(models.Model):
         Author, on_delete=models.CASCADE, related_name="blog_posts"
     )
     body = tinymce_models.HTMLField()
+    thumbnail = models.ImageField(
+        default="images/resource/blackroq_5.jpg", upload_to="Posts %Y%M%d"
+    )
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)

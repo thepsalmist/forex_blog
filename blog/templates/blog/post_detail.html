@@ -19,28 +19,27 @@
                                     <ul class="breadcrumb-bar">
                                         <li><a href="{% url 'blog:home' %}">Home</a></li>
                                         <li>Featured</li>
-                                        <li>Movies: Midnight Special delivers a new short trailer</li>
+                                        <li>{{post.title}}</li>
                                     </ul>
                                     <ul class="tag-title">
                                         <li>Featured</li>
-                                        <li>Travel</li>
+                                        <li>{{post.category}}</li>
                                     </ul>
                                     <h2>{{post.title}}</h2>
                                     <ul class="post-meta">
-                                        <li><span class="icon qb-clock"></span>{{post.publish}}</li>
-                                        <li><span class="icon qb-user2"></span>by {{post.author}}</li>
-                                        <li><span class="icon fa fa-comment-o"></span>{{post.comment_count}} comments
+                                        <li><i class="fas fa-clock"></i> {{post.publish}}</li>
+                                        <li><i class="fas fa-user"></i> by {{post.author}}</li>
+                                        <li><i class="fas fa-comment"></i> {{post.comment_count}}
+                                            comments
                                         </li>
-                                        <li><span class="icon qb-eye"></span>{{post.view_count}} Views</li>
+                                        <li><i class="fa fa-eye"></i>{{post.view_count}} Views</li>
                                     </ul>
                                     <ul class="social-icon-one alternate">
                                         <li class="share">Share:</li>
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li class="g_plus"><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                                        <li class="linkedin"><a href="#"><span class="fa fa-linkedin-square"></span></a>
-                                        </li>
-                                        <li class="pinteret"><a href="#"><span class="fa fa-pinterest-p"></span></a>
+                                        <li><a href="#"><span class="fab fa-facebook"></span></a></li>
+                                        <li class="twitter"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li class="telegram"><a href="#"><span class="fab fa-telegram"></span></a></li>
+                                        <li class="pinteret"><a href="#"><span class="fab fa-pinterest-p"></span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -70,7 +69,9 @@
                                     <div class="news-block-two small-block">
                                         <div class="inner-box">
                                             <div class="image">
-                                                <a href="#"><img src="images/resource/news-40.jpg" alt="" /></a>
+                                                <a href="{{post.get_absolute_url}}"><img src="{{post.thumbnail.url}}"
+                                                        alt="" /></a>
+
                                                 <div class="category"><a href="#">{{post.category}}</a></div>
                                             </div>
                                             <div class="lower-box">
@@ -133,17 +134,16 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                             <!-- Comment Form -->
-                            <div class="comment-form">
 
+                            <div class="comment-form">
                                 <div class="sec-title">
                                     <a href="{% url 'login' %}"><button class="theme-btn" type="submit"
                                             name="submit-form">Login to
                                             Comment</button></a>
                                 </div>
+                                {% if user.is_authenticated%}
                                 <!--Comment Form-->
                                 <form method="post" action=".">
                                     {% csrf_token %}
@@ -172,8 +172,9 @@
                                         </div>
                                     </div>
                                 </form>
-
+                                {% endif %}
                             </div>
+
                             <!--End Comment Form -->
                         </div>
                     </div>

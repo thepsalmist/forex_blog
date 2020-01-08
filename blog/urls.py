@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-from .views import post_list, post_detail
+from .views import post_list, post_detail, analysis, education
 
 app_name = "blog"
 
@@ -13,4 +13,6 @@ urlpatterns = [
         views.post_detail,
         name="post_detail",
     ),
+    path("education/", views.education, name="education"),
+    path("analysis/", views.analysis, name="analysis"),
 ]

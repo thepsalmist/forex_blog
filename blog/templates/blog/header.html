@@ -10,11 +10,11 @@
                     <!--social-icon-->
                     <div class="social-icon">
                         <ul class="clearfix">
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                            <li><a href="#"><span class="fa fa-behance"></span></a></li>
+                            <li><a href="#"><span class="fab fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fab fa-medium"></span></a></li>
+                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                            <li><a href=""><span class="fab fa-telegram"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -27,14 +27,14 @@
                             <div class="form-group">
                                 {% if user.is_authenticated %}
                                 <a href="{% url 'logout' %}" class="btn btn-lg">
-                                    Logout <span class="fa fa-behance"></span>
+                                    Logout <span class="fas fa-sign-out-alt"></span>
                                 </a>
                                 {% else %}
                                 <a href="{% url 'login' %}" class="btn btn-lg">
-                                    Login <span class="fa fa-behance"></span>
+                                    Login <span class="fas fa-lock"></span>
                                 </a>
-                                <a href="{% url 'register' %}" class="btn">
-                                    <span>SignUp</span>
+                                <a href="{% url 'register' %}" class="btn">SignUp
+                                    <span class="fas fa-user-plus"></span>
                                 </a>
                                 {% endif %}
                             </div>
@@ -90,8 +90,8 @@
                         <div class="navbar-collapse collapse clearfix ">
                             <ul class="navigation clearfix">
                                 <li><a href="#">Market News</a></li>
-                                <li><a href="contact.html">Analysis</a></li>
-                                <li><a href="contact.html">Education</a></li>
+                                <li><a href="{% url 'blog:analysis' %}">Analysis</a></li>
+                                <li><a href="{% url 'blog:education' %}">Education</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
@@ -104,7 +104,7 @@
                 </nav>
                 <!-- Hidden Nav Toggler -->
                 <div class="nav-toggler">
-                    <button class="hidden-bar-opener"><span class="icon qb-menu1"></span></button>
+                    <button class="hidden-bar-opener"><span class="fa fa-bars"></span></button>
                 </div>
 
             </div>
@@ -141,23 +141,14 @@
                             <li><a href="">Analysis</a></li>
                             <li><a href="">About</a></li>
                             <li><a href="">Contact Us</a></li>
-                            <li class="dropdown"><a href="#">Shop</a>
-                                <ul>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-single.html">Shop Details</a></li>
-                                    <li><a href="shoping-cart.html">Cart Page</a></li>
-                                    <li><a href="checkout.html">Checkout Page</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{% url 'shop:shop_products'%}"></a></li>
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->
             </div>
-
         </div>
     </div>
     <!--End Sticky Header-->
-
 </header>
 <!--End Header Style Two -->
 
@@ -194,20 +185,18 @@
                 <form method="post" action="">
                     <div class="form-group">
                         <input type="search" name="text" value="" placeholder="Search ..." required="">
-                        <button type="submit" class="theme-btn"><span class="fa fa-search"></span></button>
+                        <button type="submit" class="theme-btn"><span class="fas fa-search"></span></button>
                     </div>
                 </form>
             </div>
             <!--Social Links-->
             <ul class="social-links clearfix">
-                <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
+                <li><a href="#"><span class="fab fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fab fa-telegram"></span></a></li>
+                <li><a href="#"><span class="fab fa-pinterest"></span></a></li>
             </ul>
-
         </div>
-
     </div><!-- / Hidden Bar Wrapper -->
 
 </section>

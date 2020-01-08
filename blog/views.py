@@ -64,6 +64,14 @@ def post_detail(request, year, month, day, post):
     return render(request, "blog/post_detail.html", context)
 
 
+def education(request):
+    return render(request, "blog/education.html", context={})
+
+
+def analysis(request):
+    return render(request, "blog/analysis.html", context={})
+
+
 @login_required
 def post_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id)

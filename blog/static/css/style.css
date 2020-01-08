@@ -3252,13 +3252,14 @@ img{
 
 .widget-post .post-info:before{
 	position:absolute;
-	 content: "\e943";
+	content: "\f017";
 	left:0px;
 	top:1px;
 	font-size:12px;
 	color:#999999;
-	font-weight:300;
-	font-family: 'quebec';
+	font-weight:900;
+	font-family: 'Font Awesome 5 Free';
+	
 }
 
 /*Cat List*/
@@ -5250,7 +5251,8 @@ img{
 	top:0px;
 	font-size:13px;
 	color:#777777;
-	font-family: 'FontAwesome';
+	font-weight: 900;
+	font-family: 'Font Awesome 5 Free';
 }
 
 .breadcrumb-bar li:last-child:after{

@@ -1,5 +1,6 @@
 {% extends 'blog/base.html' %}
 {% load static %}
+{% block title%} Quantfx | The Best Forex News, Education and Analysis {% endblock %}
 {% block content %}
 
 <body>
@@ -7,7 +8,6 @@
     <div class="page-wrapper">
 
         <!--Main Slider Two-->
-
         <!--End Main Slider Two-->
         <!--Sidebar Page Container-->
         <div class="sidebar-page-container">
@@ -27,8 +27,10 @@
                                     {% for post in posts%}
                                     <div class="inner-box">
                                         <div class="image">
-                                            <a href="{{post.get_absolute_url}}"><img
-                                                    src="{% static 'images/resource/news-1.jpg' %}" alt="" /></a>
+
+                                            <a href="{{post.get_absolute_url}}"><img src="{{post.thumbnail.url}}"
+                                                    alt="" /></a>
+
                                         </div>
                                         <div class="lower-box">
                                             <div>
@@ -76,7 +78,7 @@
                         <!--Adds Section-->
                         <section class="adds-block text-center">
                             <div class="image">
-                                <a href="#"><img src="images/resource/header-add.jpg" alt="" /></a>
+                                <a href="#"><img src="" alt="" /></a>
                             </div>
                         </section>
                         <!--End Adds Section-->
@@ -92,7 +94,7 @@
                                 <div class="news-block-three style-three">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <img src="images/resource/news-19.jpg" alt="" />
+                                            <img src="" alt="" />
                                             <div class="overlay-box">
                                                 <a href="blog-single.html" class="play-btn"><span
                                                         class="icon qb-play-arrow"></span></a>
@@ -115,7 +117,7 @@
                                 <div class="news-block-three style-three">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <img src="images/resource/news-19.jpg" alt="" />
+                                            <img src="" alt="" />
                                             <div class="overlay-box">
                                                 <a href="blog-single.html" class="play-btn"><span
                                                         class="icon qb-play-arrow"></span></a>
@@ -138,7 +140,7 @@
                                 <div class="news-block-three style-three">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <img src="images/resource/news-19.jpg" alt="" />
+                                            <img src="" alt="" />
                                             <div class="overlay-box">
                                                 <a href="blog-single.html" class="play-btn"><span
                                                         class="icon qb-play-arrow"></span></a>
@@ -178,7 +180,7 @@
                     </div>
 
                     <div class="col-lg-7 col-md-12 col-sm-12">
-                        <form method="post" action="http://ary-themes.com/html/noor_tech/newspoint/contact.html">
+                        <form method="post" action="">
                             <div class="form-group clearfix">
                                 <input type="email" name="email" value="" placeholder="Enter Email Address" required>
                                 <button type="submit" class="theme-btn btn-style-four">Subscribe</button>

@@ -4,19 +4,19 @@
 
 <head>
     <meta charset="utf-8">
-    {% if title %}
-    <title>Quantfx | {{title}} </title>
-    {% else %}
-    <title>Quantfx | The best forex resources</title>
-    {% endif %}
+
+    <title>{% block title %} {% endblock %} </title>
+
     <!-- Stylesheets -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/all.css' %}" rel="stylesheet">
     <!--Favicon-->
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %} type=" image/x-icon"> <link rel="icon"
-        href="{% static 'images/favicon.png' %} type=" image/x-icon"> <!-- Responsive -->
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Quantfx provides Education, News and Analysis on Forex, Commodities and Indices">
+    <meta name="keyword" content="forex, forex-news, forex-analysis, trade-forex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 
@@ -36,6 +36,7 @@
     <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/color-settings.js' %}"></script>
+    <script src="{% static 'js/all.js' %}"></script>
 </body>
 
 </html>

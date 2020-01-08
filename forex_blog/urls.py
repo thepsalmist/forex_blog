@@ -17,14 +17,26 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from users import views as user_views
+from blog.sitemaps import PostSitemap
+
+sitemaps = {
+    "posts": PostSitemap,
+}
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("shop/", include("shop.urls", namespace="shop")),
     path("", include("blog.urls", namespace="blog")),
     path("tinymce/", include("tinymce.urls")),
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
     path("register/", user_views.register, name="register"),
     path(
         "login/",
