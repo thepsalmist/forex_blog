@@ -25,6 +25,9 @@ class Category(models.Model):
         ("banks", "BANKS"),
         ("crypto", "CRYPTO"),
         ("commodities", "COMMODITIES"),
+        ("education", "EDUCATION"),
+        ("analysis","ANALYSIS"),
+        ("news","NEWS"),
     )
     title = models.CharField(
         choices=CATEGORY_CHOICES, max_length=100, default="currency"
