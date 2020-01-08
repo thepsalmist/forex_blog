@@ -7,8 +7,8 @@ from .forms import CommentForm
 
 
 def get_category_count():
-    queryset = Post.published.values("categories__title").annotate(
-        Count("categories__title")
+    queryset = Post.published.values("category__title").annotate(
+        Count("category__title")
     )
     return queryset
 
@@ -16,12 +16,14 @@ def get_category_count():
 def post_list(request, category_slug=None):
     posts = Post.published.all()
     latest_posts = Post.published.order_by("-publish")[:4]
+    popular = Post.published.order_by("-view_count")[:5]
     categories = Category.objects.all()
     # category = None
     # if category_slug:
     #     category = get_object_or_404(Category, slug=category_slug)
     #     posts = posts.filter(category=category)
 
+    category_count = get_category_count()
     paginator = Paginator(posts, 6)
     page = request.GET.get("page")
     try:
@@ -33,7 +35,9 @@ def post_list(request, category_slug=None):
 
     context = {
         "posts": posts,
+        "popular": popular,
         "categories": categories,
+        "category_count": category_count,
         "page": page,
         "latest_posts": latest_posts,
     }

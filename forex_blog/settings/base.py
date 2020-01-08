@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "tinymce",
     "crispy_forms",
     "taggit",
+    "django_social_share",
 ]
 
 MIDDLEWARE = [

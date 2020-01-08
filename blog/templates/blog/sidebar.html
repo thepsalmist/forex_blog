@@ -18,9 +18,9 @@
                 <h2>Categories</h2>
             </div>
             <ul class="cat-list">
-                {% for cat in categories%}
-                <li class="clearfix"><a href="">{{cat.title}}
-                        <span>(30)</span></a>
+                {% for cat in category_count %}
+                <li class="clearfix"><a href="">{{cat.category__title}}
+                        <span>{{cat.category__title__count}}</span></a>
                 </li>
                 {% endfor %}
             </ul>
@@ -65,8 +65,7 @@
                     <!--Tab Btns-->
                     <ul class="tab-btns tab-buttons clearfix">
                         <li data-tab="#prod-popular" class="tab-btn active-btn">Popular</li>
-                        <li data-tab="#prod-recent" class="tab-btn">Recent</li>
-                        <li data-tab="#prod-comment" class="tab-btn">Comments</li>
+                        <li data-tab="#prod-recent" class="tab-btn">Latest</li>
                     </ul>
 
                     <!--Tabs Container-->
@@ -74,123 +73,37 @@
                         <!--Tab / Active Tab-->
                         <div class="tab active-tab" id="prod-popular">
                             <div class="content">
+                                {% for post in popular %}
                                 <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-1.jpg" alt=""></a>
+                                    <figure class="post-thumb"><a href="{{post.get_absolute_url}}"><img
+                                                src="{{post.thumbnail.url}}" alt=""></a>
                                         <div class="overlay"><span class="icon qb-play-arrow"></span></div>
                                     </figure>
-                                    <div class="text"><a href="blog-single.html">Historical Placed &
-                                            his photoshopped</a></div>
-                                    <div class="post-info">April 01, 2017</div>
-                                </article>
+                                    <div class="text"><a href="blog-single.html">{{post.title}}</a></div>
+                                    <div class="post-info">{{post.publish}} <span> <i class="fas fa-eye">
+                                            </i> {{post.view_count}} Views</span> </div>
 
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-2.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">the Poor Man use
-                                            cycling for is Business improvement</a></div>
-                                    <div class="post-info">April 02, 2017</div>
-                                </article>
 
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-3.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">American Black Film
-                                            Festival New projects from film TV</a></div>
-                                    <div class="post-info">April 03, 2017</div>
                                 </article>
-
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-4.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">Amy Schumer swaps
-                                            lives with Anna Wintour</a></div>
-                                    <div class="post-info">April 04, 2017</div>
-                                </article>
-
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-9.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">Historical Placed &
-                                            his photoshopped</a></div>
-                                    <div class="post-info">April 26, 2017</div>
-                                </article>
-
+                                {% endfor %}
                             </div>
                         </div>
 
                         <!--Tab-->
                         <div class="tab" id="prod-recent">
                             <div class="content">
-
+                                {% for post in latest_posts%}
                                 <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-2.jpg" alt=""></a>
+                                    <figure class="post-thumb"><a href="{{post.get_absolute_url}}"><img
+                                                src="{{post.thumbnail.url}}" alt=""></a>
                                         <div class="overlay"><span class="icon qb-play-arrow"></span></div>
                                     </figure>
-                                    <div class="text"><a href="blog-single.html">the Poor Man use
-                                            cycling for is Business improvement</a></div>
-                                    <div class="post-info">April 02, 2017</div>
+                                    <div class="text"><a href="{{post.thumbnail.url}}">{{post.title}}</a></div>
+                                    <div class="post-info">{{post.publish}}</div>
                                 </article>
-
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-3.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">American Black Film
-                                            Festival New projects from film TV</a></div>
-                                    <div class="post-info">April 03, 2017</div>
-                                </article>
-
+                                {% endfor %}
                             </div>
                         </div>
-
-                        <!--Tab-->
-                        <div class="tab" id="prod-comment">
-                            <div class="content">
-
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-3.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">American Black Film
-                                            Festival New projects from film TV</a></div>
-                                    <div class="post-info">April 03, 2017</div>
-                                </article>
-
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-4.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">Amy Schumer swaps
-                                            lives with Anna Wintour</a></div>
-                                    <div class="post-info">April 04, 2017</div>
-                                </article>
-
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img
-                                                src="images/resource/post-thumb-1.jpg" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="blog-single.html">Historical Placed &
-                                            his photoshopped</a></div>
-                                    <div class="post-info">April 01, 2017</div>
-                                </article>
-
-                            </div>
-                        </div>
-
                     </div>
 
                 </div>

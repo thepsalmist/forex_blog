@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load social_share %}
 {% block content %}
 <!--Sidebar Page Container-->
 
@@ -32,14 +33,17 @@
                                         <li><i class="fas fa-comment"></i> {{post.comment_count}}
                                             comments
                                         </li>
-                                        <li><i class="fa fa-eye"></i>{{post.view_count}} Views</li>
+                                        <li><i class="fa fa-eye"></i> {{post.view_count}} Views</li>
                                     </ul>
                                     <ul class="social-icon-one alternate">
                                         <li class="share">Share:</li>
-                                        <li><a href="#"><span class="fab fa-facebook"></span></a></li>
-                                        <li class="twitter"><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                        <li class="telegram"><a href="#"><span class="fab fa-telegram"></span></a></li>
-                                        <li class="pinteret"><a href="#"><span class="fab fa-pinterest-p"></span></a>
+                                        <li><a href=""><span class="fab fa-facebook"></span></a>
+                                        </li>
+                                        <li class="twitter"><a href=""><span class="fab fa-twitter"></span></a>
+                                        </li>
+                                        <li class="telegram"><a href=""><span class="fab fa-telegram"></span></a>
+                                        </li>
+                                        <li class="pinteret"><a href=""><span class="fab fa-pinterest-p"></span></a>
                                         </li>
                                     </ul>
                                 </div>
