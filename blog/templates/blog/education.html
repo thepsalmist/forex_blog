@@ -17,23 +17,20 @@
                         <h2>Latest News</h2>
                     </div>
                     <div class="content-blocks">
-
                         <!--News Block Four-->
                         <div class="news-block-four">
                             <div class="inner-box">
                                 <div class="row clearfix">
+                                    {% for post in posts %}
                                     <div class="image-column col-lg-6 col-md-6 col-sm-12">
                                         <div class="image">
-                                            <a href="blog-single.html"><img src="images/resource/news-10.jpg"
-                                                    alt=""></a>
+                                            <a href="blog-single.html"><img src="{{post.thumbnail.url}}" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="content-box col-lg-6 col-md-6 col-sm-12">
                                         <div class="content-inner">
-                                            <div class="category"><a href="blog-single.html">Travel</a></div>
-                                            <h3><a href="blog-single.html">Our dreams just got one step closer to
-                                                    universal
-                                                    reality</a></h3>
+                                            <div class="category"><a href="blog-single.html">{{post.category}}</a></div>
+                                            <h3><a href="blog-single.html">{{post.title}}</a></h3>
                                             <ul class="post-meta">
                                                 <li><span class="icon fa fa-clock-o"></span>March 03, 2017</li>
                                                 <li><span class="icon fa fa-comment-o"></span>9</li>
@@ -45,72 +42,10 @@
                                                 penatibus et magnis dis parturient montesti…</div>
                                         </div>
                                     </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
-
-                        <!--News Block Four-->
-                        <div class="news-block-four">
-                            <div class="inner-box">
-                                <div class="row clearfix">
-                                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
-                                        <div class="image">
-                                            <a href="blog-single.html"><img src="images/resource/news-11.jpg"
-                                                    alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="content-box col-lg-6 col-md-6 col-sm-12">
-                                        <div class="content-inner">
-                                            <div class="category"><a href="blog-single.html">Fashion</a></div>
-                                            <h3><a href="blog-single.html">Elon Musk's Hyperloop vision races toward
-                                                    first
-                                                    public test</a></h3>
-                                            <ul class="post-meta">
-                                                <li><span class="icon fa fa-clock-o"></span>March 04, 2017</li>
-                                                <li><span class="icon fa fa-comment-o"></span>7</li>
-                                                <li><span class="icon fa fa-eye"></span>20</li>
-                                            </ul>
-                                            <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                                doli.
-                                                Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque
-                                                penatibus et magnis dis parturient montesti…</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--News Block Four-->
-                        <div class="news-block-four">
-                            <div class="inner-box">
-                                <div class="row clearfix">
-                                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
-                                        <div class="image">
-                                            <a href="blog-single.html"><img src="images/resource/news-12.jpg"
-                                                    alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="content-box col-lg-6 col-md-6 col-sm-12">
-                                        <div class="content-inner">
-                                            <div class="category"><a href="blog-single.html">Sports</a></div>
-                                            <h3><a href="blog-single.html">Every New day scurity strategy for your
-                                                    personal
-                                                    life</a></h3>
-                                            <ul class="post-meta">
-                                                <li><span class="icon fa fa-clock-o"></span>March 05, 2017</li>
-                                                <li><span class="icon fa fa-comment-o"></span>5</li>
-                                                <li><span class="icon fa fa-eye"></span>2450</li>
-                                            </ul>
-                                            <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                                doli.
-                                                Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu sociis natoque
-                                                penatibus et magnis dis parturient montesti…</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                     <!-- Styled Pagination -->

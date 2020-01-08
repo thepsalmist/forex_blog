@@ -27,6 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # Application definition
 
 INSTALLED_APPS = [
+    "marketting.apps.MarkettingConfig",
     "shop.apps.ShopConfig",
     "users.apps.UsersConfig",
     "blog.apps.BlogConfig",

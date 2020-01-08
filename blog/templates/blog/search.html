@@ -1,0 +1,47 @@
+{% extends "blog/base.html"%}
+{% load static %}
+{% block title%} Quantfx | Search {% endblock %}
+{% block content %}
+
+<body>
+    {% include "blog/header.html" %}
+    <!--About Section Three-->
+    <section class="about-section-three">
+        <div class="auto-container">
+            <!--Title-->
+            <!-- <div class="upper-title">
+                <h1>Best digital agency for your business</h1>
+                <div class="text">When we first get to know you, we’ll immediately begin analyzing your website. We want
+                    to know everything we can about it.</div>
+            </div> -->
+
+            <!--Contetn Block-->
+            <div class="content-block">
+                <div class=" col-lg-8 col-md-12 col-sm-12">
+                    {% for post in posts %}
+                    <div class="row clearfix">
+                        <!--Image Column-->
+                        <div class="image-column col-lg-4 col-md-4 col-sm-12">
+                            <figure class="image"><a href="{{post.get_absolute_url}}"><img src="{{post.thumbnail.url}}"
+                                        alt=""></a></figure>
+                        </div>
+                        <!--Text Column-->
+                        <div class="text-column col-lg-8 col-md-8 col-sm-12">
+                            <div class="inner">
+                                <a href="{{post.get_absolute_url}}">
+                                    <h2>{{post.title}}</h2>
+                                </a>
+                                <p>{{post.body}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            {% include "blog/sidebar.html" with categories=categories %}
+        </div>
+    </section>
+    {% include "blog/footer.html" %}
+</body>
+{% endblock %}

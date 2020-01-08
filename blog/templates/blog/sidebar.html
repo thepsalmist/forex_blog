@@ -4,10 +4,11 @@
 
         <!-- Search -->
         <div class="sidebar-widget search-box">
-            <form method="post" action="">
+            <form method="post" action="{% url 'blog:search' %}">
+                {% csrf_token %}
                 <div class="form-group">
-                    <input type="search" name="search-field" value="" placeholder="Search" required>
-                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                    <input type="search" name="q" value="" placeholder="Search" required>
+                    <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </form>
         </div>

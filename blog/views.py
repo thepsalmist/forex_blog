@@ -13,17 +13,6 @@ def get_category_count():
     return queryset
 
 
-def search(request):
-    queryset = Post.published.all()
-    query = request.GET.get("q")
-    if query:
-        queryset = queryset.filter(
-            Q(title__icontains=query) | Q(body__icontains=query)
-        ).distinct()
-
-    return render(request, "blog/search.html", context={"queryset": queryset})
-
-
 def post_list(request, category_slug=None):
     posts = Post.published.all()
     latest_posts = Post.published.order_by("-publish")[:4]
@@ -86,8 +75,19 @@ def post_detail(request, year, month, day, post):
     return render(request, "blog/post_detail.html", context)
 
 
-def education(request):
-    return render(request, "blog/education.html", context={})
+def search(request):
+    categories = Category.objects.all()
+    queryset = Post.published.all()
+    query = request.GET.get("q")
+    if query:
+        queryset = queryset.filter(
+            Q(title__icontains=query) | Q(body__icontains=query)
+        ).distinct()
+    context = {
+        "queryset": queryset,
+        "categories": categories,
+    }
+    return render(request, "blog/search.html", context)
 
 
 def analysis(request):
@@ -97,6 +97,8 @@ def analysis(request):
 def news(request):
     return render(request, "blog/news.html", context={})
 
+def education(request):
+    return render(request,"blog/education.html", context={})
 
 @login_required
 def post_comment(request, post_id):
