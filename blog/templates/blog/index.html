@@ -19,7 +19,11 @@
                         <div class="content">
                             <!--Sec Title-->
                             <div class="sec-title">
+                                {% if category %}
+                                <h2>{{category.title}}</h2>
+                                {% else %}
                                 <h2>Featured Articles</h2>
+                                {%endif%}
                             </div>
                             <div class="row clearfix">
                                 <!--News Block One-->

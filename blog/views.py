@@ -13,15 +13,26 @@ def get_category_count():
     return queryset
 
 
+def search(request):
+    queryset = Post.published.all()
+    query = request.GET.get("q")
+    if query:
+        queryset = queryset.filter(
+            Q(title__icontains=query) | Q(body__icontains=query)
+        ).distinct()
+
+    return render(request, "blog/search.html", context={"queryset": queryset})
+
+
 def post_list(request, category_slug=None):
     posts = Post.published.all()
     latest_posts = Post.published.order_by("-publish")[:4]
     popular = Post.published.order_by("-view_count")[:5]
+    category = None
     categories = Category.objects.all()
-    # category = None
-    # if category_slug:
-    #     category = get_object_or_404(Category, slug=category_slug)
-    #     posts = posts.filter(category=category)
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        posts = posts.filter(category=category)
 
     category_count = get_category_count()
     paginator = Paginator(posts, 6)
@@ -36,6 +47,7 @@ def post_list(request, category_slug=None):
     context = {
         "posts": posts,
         "popular": popular,
+        "category": category,
         "categories": categories,
         "category_count": category_count,
         "page": page,
@@ -53,6 +65,7 @@ def post_detail(request, year, month, day, post):
         publish__month=month,
         publish__day=day,
     )
+    categories = Category.objects.all()
     comments = post.comments.filter(active=True)
     post_tags_ids = post.tags.values_list("id", flat=True)
     similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(id=post.id)
@@ -63,7 +76,12 @@ def post_detail(request, year, month, day, post):
     post.view_count += 1
     post.save(update_fields=["view_count"])
 
-    context = {"post": post, "comments": comments, "similar_posts": similar_posts}
+    context = {
+        "post": post,
+        "comments": comments,
+        "similar_posts": similar_posts,
+        "categories": categories,
+    }
 
     return render(request, "blog/post_detail.html", context)
 
@@ -74,6 +92,10 @@ def education(request):
 
 def analysis(request):
     return render(request, "blog/analysis.html", context={})
+
+
+def news(request):
+    return render(request, "blog/news.html", context={})
 
 
 @login_required

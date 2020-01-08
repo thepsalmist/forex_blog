@@ -26,13 +26,18 @@ class Category(models.Model):
         ("crypto", "CRYPTO"),
         ("commodities", "COMMODITIES"),
         ("education", "EDUCATION"),
-        ("analysis","ANALYSIS"),
-        ("news","NEWS"),
+        ("analysis", "ANALYSIS"),
+        ("news", "NEWS"),
     )
     title = models.CharField(
         choices=CATEGORY_CHOICES, max_length=100, default="currency"
     )
     slug = models.SlugField(max_length=200, db_index=True)
+
+    class Meta:
+        ordering = ("title",)
+        verbose_name = "category"
+        verbose_name_plural = "categories"
 
     def __str__(self):
         return self.title
@@ -59,7 +64,9 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="draft")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name="blog_posts", default=1
+    )
     view_count = models.IntegerField(default=0)
     comment_count = models.IntegerField(default=0)
     objects = models.Manager()

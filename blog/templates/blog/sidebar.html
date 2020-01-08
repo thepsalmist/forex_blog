@@ -18,8 +18,8 @@
                 <h2>Categories</h2>
             </div>
             <ul class="cat-list">
-                {% for cat in category_count %}
-                <li class="clearfix"><a href="">{{cat.category__title}}
+                {% for cat in categories %}
+                <li class="clearfix"><a href="{{cat.get_absolute_url}}">{{cat.title}}
                         <span>{{cat.category__title__count}}</span></a>
                 </li>
                 {% endfor %}
