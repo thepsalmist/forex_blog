@@ -23,6 +23,18 @@
 <body>
     {% block content %}
 
+    <div class="page-wrapper">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="container alert alert-{{message.tags}}">
+            {{message}}
+        </div>
+
+        {% endfor %}
+        {%endif%}
+    </div>
+
+
     {% endblock content%}
 
     <script src="{% static 'js/jquery.js' %}"> </script>

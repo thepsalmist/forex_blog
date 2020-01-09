@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Author, Comment
+from .models import Post, Category, Author, Comment, Contact
 
 
 @admin.register(Post)
@@ -30,3 +30,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ("user",)
 
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "message")

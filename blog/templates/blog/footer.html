@@ -46,7 +46,7 @@
                     <div class="footer-widget newsletter-widget">
                         <h2>Newsletter</h2>
                         <div class="newsletter-form">
-                            <form method="post" action="http://ary-themes.com/html/noor_tech/newspoint/contact.html">
+                            <form method="post" action=".">
                                 <div class="form-group">
                                     <input type="text" name="name" value="" placeholder="Name" required="">
                                 </div>
@@ -103,10 +103,10 @@
 
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <ul class="footer-nav">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="{% url 'blog:home' %}">Home</a></li>
+                            <li><a href="{% url 'blog:contact' %}">Contact</a></li>
+                            <li><a href="{% url 'blog:terms_of_use' %}">Terms of Use</a></li>
+                            <li><a href="{% url 'blog:privacy' %}">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 ">

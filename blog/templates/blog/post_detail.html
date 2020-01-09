@@ -113,7 +113,7 @@
                                             <div class="comment-info">{{comment.user.username}}</div>
                                             <div class="post-date">{{comment.created}}</div>
                                             <div class="text">{{comment.body}}</div>
-                                            <a href="#" class="reply-btn">Reply</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -121,20 +121,11 @@
                                 <!--Comment Box-->
                                 <div class="comment-box reply-comment">
                                     <div class="comment">
-                                        <div class="author-thumb"><img src="images/resource/author-1.jpg" alt=""></div>
+                                        <div class="author-thumb"><img src="" alt=""></div>
                                         <div class="comment-inner">
-                                            <div class="comment-info">George Belly</div>
-                                            <div class="post-date">March 03, 2017</div>
-                                            <div class="text">Lorem ipsum dolor sit amet, consectetuer
-                                                adipiscing elit
-                                                doli.
-                                                Aenean commodo ligula eget dolor. Aenean massa. Cumtipsu
-                                                sociis natoque
-                                                penatibus et magnis dis parturient montesti, nascetur
-                                                ridiculus mus.
-                                                Donec
-                                                qam penatibus et magnis .</div>
-                                            <a href="#" class="reply-btn">Reply</a>
+                                            <div class="comment-info"></div>
+                                            <div class="post-date"></div>
+                                            <div class="text"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -142,11 +133,17 @@
                             <!-- Comment Form -->
 
                             <div class="comment-form">
+                                {% if user.is_authenticated %}
+                                <div class="sec-title">
+                                    <h2>Comment</h2>
+                                </div>
+                                {% else %}
                                 <div class="sec-title">
                                     <a href="{% url 'login' %}"><button class="theme-btn" type="submit"
                                             name="submit-form">Login to
                                             Comment</button></a>
                                 </div>
+                                {% endif %}
                                 {% if user.is_authenticated%}
                                 <!--Comment Form-->
                                 <form method="post" action=".">
@@ -184,12 +181,14 @@
                     </div>
                 </div>
                 <!--Sidebar Side-->
-                {% include "blog/sidebar.html" with categories=categories %}
+                {% include "blog/sidebar.html" with categories=categories popular=popular latest_posts=latest_posts %}
 
             </div>
 
         </div>
+
     </div>
+    {% include "blog/newsletter.html" %}
     <!--End Sidebar Page Container-->
     {% include "blog/footer.html" %}
 </body>

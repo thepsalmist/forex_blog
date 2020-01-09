@@ -92,7 +92,7 @@
                                 <li><a href="{% url 'blog:news' %}">Market News</a></li>
                                 <li><a href="{% url 'blog:analysis' %}">Analysis</a></li>
                                 <li><a href="{% url 'blog:education' %}">Education</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'blog:contact' %}">Contact</a></li>
                             </ul>
                         </div>
                         <div class="navbar-collapse collapse clearfix">
@@ -136,12 +136,12 @@
 
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
                         <ul class="navigation clearfix">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Market News</a></li>
-                            <li><a href="">Analysis</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Contact Us</a></li>
-                            <li><a href="{% url 'shop:shop_products'%}"></a></li>
+                            <li><a href="{% url 'blog:home' %}">Home</a></li>
+                            <li><a href="{% url 'blog:news' %}">Market News</a></li>
+                            <li><a href="{% url 'blog:analysis' %}">Analysis</a></li>
+                            <li><a href="{% url 'blog:education' %}">Education</a></li>
+                            <li><a href="{% url 'blog:contact' %}">Contact Us</a></li>
+                            <li><a href="{% url 'shop:shop_products'%}">Shop</a></li>
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->
@@ -169,10 +169,10 @@
             <!--navigation-->
             <ul class="navigation clearfix">
                 <li><a href="{%url 'blog:home' %}">Home</a></li>
-                <li><a href="">Market News</a></li>
-                <li><a href="">Analysis</a></li>
-                <li><a href="">Education</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="{% url 'blog:news' %}">Market News</a></li>
+                <li><a href="{% url 'blog:analysis' %}">Analysis</a></li>
+                <li><a href="{% url 'blog:education' %}">Education</a></li>
+                <li><a href="{% url 'blog:contact' %}">Contact Us</a></li>
                 <li><a href="{% url 'shop:shop_products' %}">Shop</a></li>
             </ul>
         </div>

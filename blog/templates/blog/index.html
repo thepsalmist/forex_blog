@@ -6,7 +6,6 @@
 <body>
     {% include "blog/header.html" %}
     <div class="page-wrapper">
-
         <!--Main Slider Two-->
         <!--End Main Slider Two-->
         <!--Sidebar Page Container-->
@@ -170,35 +169,11 @@
                     {% include "blog/sidebar.html" with categories=categories %}
                 </div>
             </div>
-
         </div>
         <!--End Sidebar Page Container-->
-        <!--Subscribe Style One-->
-        <section class="subscribe-style-one">
-            <div class="auto-container">
-                <div class="row clearfix">
-
-                    <div class="col-lg-5 col-md-12 col-sm-12">
-                        <h2>Newsletter Subscribe</h2>
-                        <div class="text">Sign up today for hints, tips and the latest product news.</div>
-                    </div>
-
-                    <div class="col-lg-7 col-md-12 col-sm-12">
-                        <form method="post" action="">
-                            <div class="form-group clearfix">
-                                <input type="email" name="email" value="" placeholder="Enter Email Address" required>
-                                <button type="submit" class="theme-btn btn-style-four">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!--End Subscribe Style One-->
+        {% include "blog/newsletter.html" %}
     </div>
     <!--End pagewrapper-->
-
     <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span>
     </div>

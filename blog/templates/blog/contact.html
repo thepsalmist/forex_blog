@@ -1,0 +1,77 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title%} Quantfx | Contact Us {% endblock %}
+{% block content %}
+
+<body>
+    {% include "blog/header.html" %}
+    <!--Page Title-->
+    <section class="page-title">
+        <div class="auto-container">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <h2>Contact Page</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+    <!--Contact Section-->
+    <section class="contact-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Form Column-->
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="sec-title">
+                        <h2>Contact Form</h2>
+                    </div>
+                    <!--Contact Form-->
+                    <div class="contact-form">
+                        <form method="post" action="." id="contact-form">
+                            {% csrf_token %}
+                            <div class="clearfix">
+                                <div class="form-group">
+                                    {{form.name|as_crispy_field}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.email|as_crispy_field}}
+
+                                </div>
+                                <div class="form-group">
+                                    {{form.message|as_crispy_field}}
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="theme-btn submit-btn">Submit Comment</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!--Info Column-->
+                <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <h2>Contact Info</h2>
+                        </div>
+
+                        <ul class="info-list">
+                            <li>Quantfx. Nairobi CBD
+                            </li>
+                            <li>Phone: +254 786-409-255 <br> Mobile: +254 786-409-255</li>
+                            <li>Inquiries: info@forexquantfx.com <br> Consultancy: consult@forexquantfx.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--End Contact Section-->
+    {% include "blog/footer.html"%}
+</body>
+{% endblock content%}
