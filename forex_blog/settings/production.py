@@ -1,8 +1,8 @@
 from .base import *
 
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config("DEBUG", cast=bool)
 
-ALLOWED_HOSTS = ["ip-address", "www.myhost.com"]
+ALLOWED_HOSTS = ["176.58.99.51", "www.myhost.com"]
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
