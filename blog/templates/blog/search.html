@@ -3,12 +3,12 @@
 {% block title%} Quantfx | Search {% endblock %}
 {% block content %}
 
-<body>
-    {% include "blog/header.html" %}
-    <div class="container">
-        <h2>The search result is</h2>
-        <p>{{post.title}}</p>
-    </div>
-    {% include "blog/footer.html" %}
-</body>
+
+{% include "blog/header.html" %}
+<div class="container">
+    <h2>The search result is</h2>
+    <p>{{post.title}}</p>
+</div>
+{% include "blog/footer.html" %}
+
 {% endblock %}

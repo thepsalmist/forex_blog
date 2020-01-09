@@ -3,180 +3,180 @@
 {% block title%} Quantfx | The Best Forex News, Education and Analysis {% endblock %}
 {% block content %}
 
-<body>
-    {% include "blog/header.html" %}
-    <div class="page-wrapper">
-        <!--Main Slider Two-->
-        <!--End Main Slider Two-->
-        <!--Sidebar Page Container-->
-        <div class="sidebar-page-container">
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <!--Content Side-->
-                    <div class="content-side pull-right col-lg-8 col-md-12 col-sm-12">
-                        <!--Economics Blog Boxed-->
-                        <div class="content">
-                            <!--Sec Title-->
-                            <div class="sec-title">
-                                {% if category %}
-                                <h2>{{category.title}}</h2>
-                                {% else %}
-                                <h2>Featured Articles</h2>
-                                {%endif%}
-                            </div>
-                            <div class="row clearfix">
-                                <!--News Block One-->
-                                <div class="news-block-one col-lg-6 col-md-6 col-sm-12">
-                                    {% for post in posts%}
-                                    <div class="inner-box">
-                                        <div class="image">
 
-                                            <a href="{{post.get_absolute_url}}"><img src="{{post.thumbnail.url}}"
-                                                    alt="" /></a>
-
-                                        </div>
-                                        <div class="lower-box">
-                                            <div>
-                                                <h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
-                                            </div>
-                                            <div class="post-date">{{post.publish}} <span>by {{post.author}}</span>
-                                            </div>
-                                            <div class="text">{{post.body|safe|truncatewords:10}}</div>
-                                            <a href="{{post.get_absolute_url}}" class="read-more">Read More <span
-                                                    class="arrow ion-ios-arrow-thin-right"></span></a>
-                                        </div>
-                                    </div>
-                                    {% if forloop.counter|divisibleby:1 and not forloop.last %}
-                                </div>
-                                <div class="news-block-one col-lg-6 col-md-6 col-sm-12">
-                                    {%endif%}
-                                    {% endfor %}
-                                </div>
-                                <!--End News Block-->
-                            </div>
-                            <div class="styled-pagination">
-                                <ul class="clearfix">
-                                    {% if posts.has_previous%}
-                                    <li><a class="next" href="?page={{posts.previous_page_number}}"><span
-                                                class="fa fa-angle-left"></span></a></li>
-                                    {%endif%}
-
-                                    {% for num in posts.paginator.page_range%}
-                                    {% if posts.number == num %}
-                                    <li><a href="#" class="active">{{num}}</a></li>
-                                    {% elif num > posts.number|add:'-2' and num < posts.number|add:'2'%}
-                                    <li><a href="?page={{num}}">{{num}}</a></li>
-                                    {%endif%}
-                                    {%endfor%}
-
-                                    {% if posts.has_next%}
-                                    <li><a class="next" href="?page={{posts.next_page_number}}"><span
-                                                class="fa fa-angle-right"></span></a></li>
-                                    {%endif%}
-                                </ul>
-                            </div>
+{% include "blog/header.html" %}
+<div class="page-wrapper">
+    <!--Main Slider Two-->
+    <!--End Main Slider Two-->
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Content Side-->
+                <div class="content-side pull-right col-lg-8 col-md-12 col-sm-12">
+                    <!--Economics Blog Boxed-->
+                    <div class="content">
+                        <!--Sec Title-->
+                        <div class="sec-title">
+                            {% if category %}
+                            <h2>{{category.title}}</h2>
+                            {% else %}
+                            <h2>Featured Articles</h2>
+                            {%endif%}
                         </div>
-                        <!--End Category-->
-                        <br><br>
-                        <!--Adds Section-->
-                        <section class="adds-block text-center">
-                            <div class="image">
-                                <a href="#"><img src="" alt="" /></a>
-                            </div>
-                        </section>
-                        <!--End Adds Section-->
-                        <br><br>
-                        <!--Featured Block Section-->
-                        <section class="featured-block-section">
-                            <!--Sec Title-->
-                            <div class="sec-title">
-                                <h2>Featured Videos</h2>
-                            </div>
-                            <div class="single-item-carousel owl-carousel owl-theme">
-                                <!--News Block Three-->
-                                <div class="news-block-three style-three">
-                                    <div class="inner-box">
-                                        <div class="image">
-                                            <img src="" alt="" />
-                                            <div class="overlay-box">
-                                                <a href="blog-single.html" class="play-btn"><span
-                                                        class="icon qb-play-arrow"></span></a>
-                                                <div class="content">
-                                                    <div class="tag"><a href="blog-single.html">Travel</a></div>
-                                                    <h3><a href="blog-single.html">Develop a new Silk Road through
-                                                            Russia Study the New Digital Course</a></h3>
-                                                    <ul class="post-meta">
-                                                        <li><span class="icon qb-clock"></span>March 03, 2017</li>
-                                                        <li><span class="icon fa fa-comment-o"></span>0</li>
-                                                        <li><span class="icon qb-eye"></span>740</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                        <div class="row clearfix">
+                            <!--News Block One-->
+                            <div class="news-block-one col-lg-6 col-md-6 col-sm-12">
+                                {% for post in posts%}
+                                <div class="inner-box">
+                                    <div class="image">
+
+                                        <a href="{{post.get_absolute_url}}"><img src="{{post.thumbnail.url}}"
+                                                alt="" /></a>
+
+                                    </div>
+                                    <div class="lower-box">
+                                        <div>
+                                            <h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
                                         </div>
+                                        <div class="post-date">{{post.publish}} <span>by {{post.author}}</span>
+                                        </div>
+                                        <div class="text">{{post.body|safe|truncatewords:10}}</div>
+                                        <a href="{{post.get_absolute_url}}" class="read-more">Read More <span
+                                                class="arrow ion-ios-arrow-thin-right"></span></a>
                                     </div>
                                 </div>
-
-                                <!--News Block Three-->
-                                <div class="news-block-three style-three">
-                                    <div class="inner-box">
-                                        <div class="image">
-                                            <img src="" alt="" />
-                                            <div class="overlay-box">
-                                                <a href="blog-single.html" class="play-btn"><span
-                                                        class="icon qb-play-arrow"></span></a>
-                                                <div class="content">
-                                                    <div class="tag"><a href="blog-single.html">Travel</a></div>
-                                                    <h3><a href="blog-single.html">Develop a new Silk Road through
-                                                            Russia Study the New Digital Course</a></h3>
-                                                    <ul class="post-meta">
-                                                        <li><span class="icon qb-clock"></span>March 03, 2017</li>
-                                                        <li><span class="icon fa fa-comment-o"></span>0</li>
-                                                        <li><span class="icon qb-eye"></span>740</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--News Block Three-->
-                                <div class="news-block-three style-three">
-                                    <div class="inner-box">
-                                        <div class="image">
-                                            <img src="" alt="" />
-                                            <div class="overlay-box">
-                                                <a href="blog-single.html" class="play-btn"><span
-                                                        class="icon qb-play-arrow"></span></a>
-                                                <div class="content">
-                                                    <div class="tag"><a href="blog-single.html">Travel</a></div>
-                                                    <h3><a href="blog-single.html">Develop a new Silk Road through
-                                                            Russia Study the New Digital Course</a></h3>
-                                                    <ul class="post-meta">
-                                                        <li><span class="icon qb-clock"></span>March 03, 2017</li>
-                                                        <li><span class="icon fa fa-comment-o"></span>0</li>
-                                                        <li><span class="icon qb-eye"></span>740</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                {% if forloop.counter|divisibleby:1 and not forloop.last %}
                             </div>
-                        </section>
-                        <!--End Featured Block Section-->
+                            <div class="news-block-one col-lg-6 col-md-6 col-sm-12">
+                                {%endif%}
+                                {% endfor %}
+                            </div>
+                            <!--End News Block-->
+                        </div>
+                        <div class="styled-pagination">
+                            <ul class="clearfix">
+                                {% if posts.has_previous%}
+                                <li><a class="next" href="?page={{posts.previous_page_number}}"><span
+                                            class="fa fa-angle-left"></span></a></li>
+                                {%endif%}
+
+                                {% for num in posts.paginator.page_range%}
+                                {% if posts.number == num %}
+                                <li><a href="#" class="active">{{num}}</a></li>
+                                {% elif num > posts.number|add:'-2' and num < posts.number|add:'2'%}
+                                <li><a href="?page={{num}}">{{num}}</a></li>
+                                {%endif%}
+                                {%endfor%}
+
+                                {% if posts.has_next%}
+                                <li><a class="next" href="?page={{posts.next_page_number}}"><span
+                                            class="fa fa-angle-right"></span></a></li>
+                                {%endif%}
+                            </ul>
+                        </div>
                     </div>
-                    {% include "blog/sidebar.html" with categories=categories %}
+                    <!--End Category-->
+                    <br><br>
+                    <!--Adds Section-->
+                    <section class="adds-block text-center">
+                        <div class="image">
+                            <a href="#"><img src="" alt="" /></a>
+                        </div>
+                    </section>
+                    <!--End Adds Section-->
+                    <br><br>
+                    <!--Featured Block Section-->
+                    <section class="featured-block-section">
+                        <!--Sec Title-->
+                        <div class="sec-title">
+                            <h2>Featured Videos</h2>
+                        </div>
+                        <div class="single-item-carousel owl-carousel owl-theme">
+                            <!--News Block Three-->
+                            <div class="news-block-three style-three">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="" alt="" />
+                                        <div class="overlay-box">
+                                            <a href="blog-single.html" class="play-btn"><span
+                                                    class="icon qb-play-arrow"></span></a>
+                                            <div class="content">
+                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
+                                                <h3><a href="blog-single.html">Develop a new Silk Road through
+                                                        Russia Study the New Digital Course</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
+                                                    <li><span class="icon qb-eye"></span>740</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--News Block Three-->
+                            <div class="news-block-three style-three">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="" alt="" />
+                                        <div class="overlay-box">
+                                            <a href="blog-single.html" class="play-btn"><span
+                                                    class="icon qb-play-arrow"></span></a>
+                                            <div class="content">
+                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
+                                                <h3><a href="blog-single.html">Develop a new Silk Road through
+                                                        Russia Study the New Digital Course</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
+                                                    <li><span class="icon qb-eye"></span>740</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--News Block Three-->
+                            <div class="news-block-three style-three">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="" alt="" />
+                                        <div class="overlay-box">
+                                            <a href="blog-single.html" class="play-btn"><span
+                                                    class="icon qb-play-arrow"></span></a>
+                                            <div class="content">
+                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
+                                                <h3><a href="blog-single.html">Develop a new Silk Road through
+                                                        Russia Study the New Digital Course</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
+                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
+                                                    <li><span class="icon qb-eye"></span>740</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--End Featured Block Section-->
                 </div>
+                {% include "blog/sidebar.html" with categories=categories %}
             </div>
         </div>
-        <!--End Sidebar Page Container-->
-        {% include "blog/newsletter.html" %}
     </div>
-    <!--End pagewrapper-->
-    <!--Scroll to top-->
-    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span>
-    </div>
-    {% include 'blog/footer.html' %}
-</body>
+    <!--End Sidebar Page Container-->
+    {% include "blog/newsletter.html" %}
+</div>
+<!--End pagewrapper-->
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span>
+</div>
+{% include 'blog/footer.html' %}
+
 {% endblock content %}
