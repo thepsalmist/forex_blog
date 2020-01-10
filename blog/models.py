@@ -74,7 +74,7 @@ class Post(models.Model):
     tags = TaggableManager()
 
     class Meta:
-        ordering = ("publish",)
+        ordering = ("-publish",)
 
     def __str__(self):
         return self.title
