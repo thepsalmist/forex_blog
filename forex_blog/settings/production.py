@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = config("DEBUG", cast=bool)
 
-ALLOWED_HOSTS = ["139.162.226.107", "127.0.0.1"]
+ALLOWED_HOSTS = ["139.162.226.107", "www.forexquantfx.com"]
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
