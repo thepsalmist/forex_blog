@@ -10,7 +10,6 @@
 
 /*@import url('demo.css');*/
 @import url('font-awesome.css');
-@import url('quebec-font.css');
 @import url('animate.css');
 @import url('owl.css');
 @import url('plyr.css');
@@ -2329,36 +2328,51 @@ img{
 	position:relative;
 	padding: 0px 0px 0px;
 	text-align:center;
-	width:270px;
-	height:60px;
 	margin:0 auto;
-	right:20px;
+	right: 20px;
 	margin-top:20px;
 	margin-bottom:20px;
 }
 
 .hidden-bar .logo a{
 	position:relative;
-	width:270px;
-	height:60px;
 	display:block;
 }
 
 .hidden-bar .logo a .letter{
 	position:relative;
 	color:#D51820;
-	font-size:46px;
-	font-weight:700;
-	line-height:1.7em;
-	float:left;
-	top:2px;
+	font-size:40px;
+	font-weight:900;
+	line-height:1em;
+	top:10px;
 	text-transform:uppercase;
+}
+.hidden-bar .logo .next{
+	position: relative;
+	top: 10px;
+	color: #ffffff;
+	font-weight: 900;
+	font-size: 30px;
+	line-height: 1em;
+		
+}
+
+.hidden-bar .logo .last{
+	position: relative;
+	top: 10px;
+	color: #D51820;
+	font-weight: 900;
+	font-size: 35px;
+	line-height: 1em;
+	
 }
 
 .hidden-bar .logo img{
 	float:left;
 	max-width:100%;	
 }
+.hidden-bar .logo 
 
 .hidden-bar .side-menu {
 	background-color: transparent;
@@ -3596,9 +3610,6 @@ img{
 	-o-transition:all 0.3s ease;
 }
 
-.news-block-two .inner-box:hover .image > a:before{
-	
-}
 
 .news-block-two .inner-box .image .category{
 	position:absolute;
