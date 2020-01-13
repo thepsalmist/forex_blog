@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% load static %}
-
-{% block title%} Quantfx| Shop {% endblock %}
+{% block meta%} {%endblock%}
+{% block title%} Quantfx| Shop Best Forex Books and Courses {% endblock %}
 {% block content%}
 
 <body>
@@ -11,7 +11,7 @@
         <div class="auto-container">
             <div class="clearfix">
                 <div class="pull-left">
-                    <h2>Elegant Shop</h2>
+                    <h2>Quantfx Shop | Best Forex Trading Books and Courses</h2>
                 </div>
 
             </div>
@@ -23,14 +23,13 @@
     <section class="shop-section">
         <div class="auto-container">
             <!--Sort By-->
-            <div class="items-sorting">
+            <!-- <div class="items-sorting">
                 <div class="row clearfix">
                     <div class="select-column col-lg-12 col-md-12 col-sm-12">
                         <h2>Updating Produts Catalog ...</h2>
                     </div>
                 </div>
-            </div>
-
+            </div> -->
             <!--Shop Items-->
             <div class="shop-items">
                 <div class="sec-title">
@@ -38,60 +37,25 @@
                 </div>
                 <div class="row clearfix">
                     <!--Shop Item-->
+                    {% for course in courses %}
                     <div class="shop-item col-lg-3 col-md-4 col-sm-12">
                         <div class="inner-box">
-                            <div class="off-price">-30%</div>
                             <div class="image-box">
-                                <a href="shop-single.html"><img src="images/resource/products/1.jpg" alt="" /></a>
+                                <a href="#"><img src="{{course.image.url}}" alt="" /></a>
                             </div>
                             <div class="lower-box">
                                 <div class="upper-box">
-                                    <h4><a href="shop-single.html">Top Trader <br> Course</a></h4>
+                                    <h4><a href="#">{{course.title|truncatewords:7}}</a></h4>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="price">$42.00</div>
-                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                    <div class="price">Order Now</div>
+                                    <a href="#" class="cart-btn theme-btn">Order Now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
 
-                    <!--Shop Item-->
-                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <a href="shop-single.html"><img src="images/resource/products/2.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-box">
-                                <div class="upper-box">
-                                    <h4><a href="shop-single.html">Swing Trading <br> Course</a></h4>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="price"><span class="discount-price">$75.00</span> $42.00</div>
-                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Shop Item-->
-                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
-                        <div class="inner-box">
-                            <div class="sold-out">sold Out</div>
-                            <div class="image-box">
-                                <a href="shop-single.html"><img src="images/resource/products/3.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-box">
-                                <div class="upper-box">
-                                    <h4><a href="shop-single.html">News trading <br> Course</a></h4>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="price">$199.00</div>
-                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="sec-title">
@@ -99,42 +63,24 @@
                 </div>
                 <div class="row clearfix">
                     <!--Shop Item-->
+                    {% for book in books %}
                     <div class="shop-item col-lg-3 col-md-4 col-sm-12">
                         <div class="inner-box">
-                            <div class="sold-out">sold Out</div>
                             <div class="image-box">
-                                <a href="shop-single.html"><img src="images/resource/products/11.jpg" alt="" /></a>
+                                <a href="#"><img src="{{book.image.url}}" alt="" /></a>
                             </div>
                             <div class="lower-box">
                                 <div class="upper-box">
-                                    <h4><a href="shop-single.html">The intelligent investor <br> Book</a></h4>
+                                    <h4><a href="#">{{book.title|truncatewords:7}}</a></h4>
                                 </div>
                                 <div class="lower-content">
-                                    <div class="price">$199.00</div>
-                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
+                                    <div class="price">Order Now</div>
+                                    <a href="#" class="cart-btn theme-btn">Order Now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--Shop Item-->
-                    <div class="shop-item col-lg-3 col-md-4 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <a href="shop-single.html"><img src="images/resource/products/12.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-box">
-                                <div class="upper-box">
-                                    <h4><a href="shop-single.html">Why Wallstreet Matters <br> book</a></h4>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="price"><span class="discount-price">$109.00</span> $72.00</div>
-                                    <a href="shop-single.html" class="cart-btn theme-btn">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
 
 

@@ -56,6 +56,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         Author, on_delete=models.CASCADE, related_name="blog_posts"
     )
+    description = models.TextField()
     body = tinymce_models.HTMLField()
     thumbnail = models.ImageField(
         default="images/resource/blackroq_5.jpg", upload_to="Posts %Y%M%d"
