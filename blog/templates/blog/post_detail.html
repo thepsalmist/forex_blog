@@ -2,6 +2,10 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load social_share %}
+{% block meta%} {{post.description}}{%endblock%}
+{% block keyword%}{% for tag in post.tags.all%}{{tag.name}} {% endfor %} {%endblock%}
+
+{% block title%} Quantfx | {{post.title}} {%endblock%}
 {% block content %}
 <!--Sidebar Page Container-->
 

@@ -13,10 +13,9 @@
         gtag('config', 'UA-155992920-1');
     </script>
     <meta charset="utf-8">
-    <meta name="description" content="Quantfx provides Education, News and Analysis on Forex, Commodities and Indices">
-    <meta name="keyword" content="forex, forex-news, forex-analysis, trade-forex">
+    <meta name="description" content="{%block meta%}{%endblock%}">
+    <meta name="keyword" content="{%block keyword%}{%endblock%}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
@@ -25,6 +24,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/favicon_io/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/favicon_io/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'blog/favicon_io/site.webmanifest' %}">
+
 
 
     <title>{% block title %} {% endblock %} </title>
