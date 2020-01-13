@@ -4,8 +4,8 @@ from .models import Product, ProductCategory
 
 
 def shop_products(request):
-    books = Product.objects.filter(category=1)[:8]
-    courses = Product.objects.filter(category=2)[:8]
+    books = Product.objects.filter(category__title="book")[:8]
+    courses = Product.objects.filter(category__title="course")[:8]
     context = {
         "books": books,
         "courses": courses,
