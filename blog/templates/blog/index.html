@@ -96,74 +96,34 @@
                         </div>
                         <div class="single-item-carousel owl-carousel owl-theme">
                             <!--News Block Three-->
+
                             <div class="news-block-three style-three">
+                                {% for video in videos %}
                                 <div class="inner-box">
                                     <div class="image">
-                                        <img src="" alt="" />
+                                        <img src="{{video.thumbnail.url}}" alt="" />
                                         <div class="overlay-box">
-                                            <a href="blog-single.html" class="play-btn"><span
-                                                    class="icon qb-play-arrow"></span></a>
+                                            <a href="{{video.url}}" class="play-btn"><span
+                                                    class="fas fa-play"></span></a>
                                             <div class="content">
-                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
-                                                <h3><a href="blog-single.html">Develop a new Silk Road through
-                                                        Russia Study the New Digital Course</a></h3>
+                                                <div class="tag"><a href="{{video.url}}">{{video.category}}</a></div>
+                                                <h3><a href="{{video.url}}">{{video.title}}</a></h3>
                                                 <ul class="post-meta">
-                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
-                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
-                                                    <li><span class="icon qb-eye"></span>740</li>
+                                                    <li><span class="icon qb-clock"></span>{{video.publish}}</li>
+
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {% if forloop.counter|divisibleby:1 and not forloop.last%}
                             </div>
 
                             <!--News Block Three-->
                             <div class="news-block-three style-three">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="" alt="" />
-                                        <div class="overlay-box">
-                                            <a href="blog-single.html" class="play-btn"><span
-                                                    class="icon qb-play-arrow"></span></a>
-                                            <div class="content">
-                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
-                                                <h3><a href="blog-single.html">Develop a new Silk Road through
-                                                        Russia Study the New Digital Course</a></h3>
-                                                <ul class="post-meta">
-                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
-                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
-                                                    <li><span class="icon qb-eye"></span>740</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {%endif%}
+                                {%endfor%}
                             </div>
-
-                            <!--News Block Three-->
-                            <div class="news-block-three style-three">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="" alt="" />
-                                        <div class="overlay-box">
-                                            <a href="blog-single.html" class="play-btn"><span
-                                                    class="icon qb-play-arrow"></span></a>
-                                            <div class="content">
-                                                <div class="tag"><a href="blog-single.html">Travel</a></div>
-                                                <h3><a href="blog-single.html">Develop a new Silk Road through
-                                                        Russia Study the New Digital Course</a></h3>
-                                                <ul class="post-meta">
-                                                    <li><span class="icon qb-clock"></span>March 03, 2017</li>
-                                                    <li><span class="icon fa fa-comment-o"></span>0</li>
-                                                    <li><span class="icon qb-eye"></span>740</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </section>
                     <!--End Featured Block Section-->

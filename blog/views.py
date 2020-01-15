@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
-from .models import Post, Category, Comment
+from .models import Post, Category, Comment, Video
 from .forms import CommentForm, ContactForm
 from marketting.models import SignUp
 
@@ -17,6 +17,7 @@ def get_category_count():
 
 def post_list(request, category_slug=None):
     posts = Post.published.all()
+    videos = Video.objects.all()
     latest_posts = Post.published.order_by("-publish")[:4]
     popular = Post.published.order_by("-view_count")[:5]
     category = None
@@ -46,6 +47,7 @@ def post_list(request, category_slug=None):
 
     context = {
         "posts": posts,
+        "videos": videos,
         "popular": popular,
         "category": category,
         "categories": categories,
@@ -84,7 +86,7 @@ def post_detail(request, year, month, day, post):
         "similar_posts": similar_posts,
         "categories": categories,
         "latest_posts": latest_posts,
-        "popular":popular,
+        "popular": popular,
     }
 
     return render(request, "blog/post_detail.html", context)
@@ -103,6 +105,7 @@ def search(request):
         "categories": categories,
     }
     return render(request, "blog/search.html", context)
+
 
 def contact(request):
     if request.method == "POST":
@@ -140,6 +143,7 @@ def post_comment(request, post_id):
 
     return render(request, "blog/post_detail.html", context)
 
+
 def analysis(request):
     return render(request, "blog/analysis.html", context={})
 
@@ -151,8 +155,10 @@ def news(request):
 def education(request):
     return render(request, "blog/education.html", context={})
 
+
 def privacy(request):
     return render(request, "blog/privacy.html", context={})
+
 
 def terms_of_use(request):
     return render(request, "blog/terms_of_use.html", context={})
