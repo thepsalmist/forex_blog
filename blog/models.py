@@ -96,6 +96,15 @@ class Post(models.Model):
             args=[self.publish.year, self.publish.month, self.publish.day, self.slug],
         )
 
+class Video(models.Model):
+    title = models.CharField(max_length=200)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="video_posts")
+    publish = models.DateTimeField(auto_now_add=True)
+    thumbnail = models.ImageField()
+    url = models.URLField()
+
+    def __str__(self):
+        return self.title
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
