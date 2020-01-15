@@ -73,6 +73,16 @@ class Post(models.Model):
     objects = models.Manager()
     published = PublishedManager()
     tags = TaggableManager()
+    previous_post = models.ForeignKey(
+        "self",
+        related_name="previous",
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
+    next_post = models.ForeignKey(
+        "self", related_name="next", on_delete=models.SET_NULL, blank=True, null=True
+    )
 
     class Meta:
         ordering = ("-publish",)
