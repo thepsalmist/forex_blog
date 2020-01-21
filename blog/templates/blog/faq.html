@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% block title%} Quantfx | Contact Us {% endblock %}
+{% block title%} Quantfx | Forex FAQs {% endblock %}
 {% block content %}
 
 
@@ -53,19 +53,19 @@
                         <form method="post" action="">
                             {% csrf_token %}
                             <div class="form-group">
-                                <input type="text" name="username" value="" placeholder="Your Name*" required>
+                                {{form.name|as_crispy_field}}
                             </div>
 
                             <div class="form-group">
-                                <input type="email" name="email" value="" placeholder="Your Mail*" required>
+                                {{form.email|as_crispy_field}}
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="subject" value="" placeholder="Subject*">
+                                {{form.subject|as_crispy_field}}
                             </div>
 
                             <div class="form-group">
-                                <textarea name="message" placeholder="Your Question*"></textarea>
+                                {{form.message|as_crispy_field}}
                             </div>
 
                             <div class="form-group">

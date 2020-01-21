@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from .models import Post, Category, Comment, Video
-from .forms import CommentForm, ContactForm
+from .forms import CommentForm, ContactForm, FaqForm
 from marketting.models import SignUp
 
 
@@ -122,6 +122,20 @@ def contact(request):
     return render(request, "blog/contact.html", context)
 
 
+def faq(request):
+    posts = Post.published.filter(category__title="faq")
+    if request.method == "POST":
+        form = FaqForm(request.POST)
+        if form.is_valid:
+            form.save()
+            name = form.cleaned_data.get("name")
+            messages.success(request, f" Thank you {name} for your question")
+    else:
+        form = FaqForm()
+    context = {"posts": posts, "form": form}
+    return render(request, "blog/faq.html", context)
+
+
 @login_required
 def post_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id)
@@ -142,12 +156,6 @@ def post_comment(request, post_id):
     context = {"new_comment": new_comment, "comment_form": comment_form}
 
     return render(request, "blog/post_detail.html", context)
-
-
-def faq(request):
-    posts = Post.published.filter(category__title="faq")
-    context = {"posts": posts}
-    return render(request, "blog/faq.html", context)
 
 
 def analysis(request):
