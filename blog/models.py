@@ -28,6 +28,7 @@ class Category(models.Model):
         ("education", "EDUCATION"),
         ("analysis", "ANALYSIS"),
         ("news", "NEWS"),
+        ("faq", "FAQ"),
     )
     title = models.CharField(
         choices=CATEGORY_CHOICES, max_length=100, default="currency"
@@ -96,15 +97,19 @@ class Post(models.Model):
             args=[self.publish.year, self.publish.month, self.publish.day, self.slug],
         )
 
+
 class Video(models.Model):
     title = models.CharField(max_length=200)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="video_posts")
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name="video_posts"
+    )
     publish = models.DateTimeField(auto_now_add=True)
     thumbnail = models.ImageField()
     url = models.URLField()
 
     def __str__(self):
         return self.title
+
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -128,3 +133,13 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"Message by {self.name} "
+
+
+class Faq(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+
+    def __str__(self):
+        return f"Question by {self.name}"

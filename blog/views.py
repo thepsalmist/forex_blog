@@ -144,6 +144,12 @@ def post_comment(request, post_id):
     return render(request, "blog/post_detail.html", context)
 
 
+def faq(request):
+    posts = Post.published.filter(category__title="faq")
+    context = {"posts": posts}
+    return render(request, "blog/faq.html", context)
+
+
 def analysis(request):
     return render(request, "blog/analysis.html", context={})
 

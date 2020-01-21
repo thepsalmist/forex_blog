@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Author, Comment, Contact, Video
+from .models import Post, Category, Author, Comment, Contact, Video, Faq
 
 
 @admin.register(Post)
@@ -40,3 +40,11 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "message")
+
+
+@admin.register(Faq)
+class FaqAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "subject", "message")
+    list_filter = ("subject", "name")
+    search_fields = ("subject",)
+

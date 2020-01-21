@@ -1,0 +1,91 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title%} Quantfx | Contact Us {% endblock %}
+{% block content %}
+
+
+{% include "blog/header.html" %}
+
+<!--Faq Section-->
+<section class="faq-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+
+            <!--Faq Column-->
+            <div class="faq-column col-lg-7 col-md-12 col-sm-12">
+
+                <!--Faq Title-->
+                <div class="faq-title">
+                    <h2>Forex Frequently Asked Questions</h2>
+                    <div class="title-text">Find you question from below or submit your question from the submit box.
+                    </div>
+                </div>
+
+                <!--Accordian Box-->
+                <ul class="accordion-box">
+                    {% for post in posts %}
+                    <!--Block-->
+                    <li class="accordion block">
+                        <div class="acc-btn">
+                            <div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span
+                                    class="icon icon-minus fa fa-minus"></span></div>{{post.title}}
+                        </div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">
+                                    <p>{{post.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+            <!--Form Column-->
+            <div class="form-column col-lg-5 col-md-12 col-sm-12">
+                <div class="form-inner">
+                    <h2>Do you have any questions ? <br> Submit Your Question </h2>
+
+                    <!--Faq Form-->
+                    <div class="faq-form">
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="username" value="" placeholder="Your Name*" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" value="" placeholder="Your Mail*" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="subject" value="" placeholder="Subject*">
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Question*"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="theme-btn btn-style-three">Submit Question</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!--End Faq Form-->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+{% include "blog/newsletter.html" %}
+<!--End Faq Section-->
+
+{% include "blog/footer.html"%}
+
+{% endblock content%}

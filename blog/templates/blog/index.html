@@ -103,11 +103,12 @@
                                     <div class="image">
                                         <img src="{{video.thumbnail.url}}" alt="" />
                                         <div class="overlay-box">
-                                            <a href="{{video.url}}" class="play-btn"><span
+                                            <a href="{{video.url}}" target="_blank" class="play-btn"><span
                                                     class="fas fa-play"></span></a>
                                             <div class="content">
-                                                <div class="tag"><a href="{{video.url}}">{{video.category}}</a></div>
-                                                <h3><a href="{{video.url}}">{{video.title}}</a></h3>
+                                                <div class="tag"><a href="{{video.url}}"
+                                                        target="_blank">{{video.category}}</a></div>
+                                                <h3><a href="{{video.url}}" target="_blank">{{video.title}}</a></h3>
                                                 <ul class="post-meta">
                                                     <li><span class="icon qb-clock"></span>{{video.publish}}</li>
 
