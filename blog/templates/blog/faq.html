@@ -34,7 +34,7 @@
                         <div class="acc-content">
                             <div class="content">
                                 <div class="text">
-                                    <p>{{post.body}}</p>
+                                    <p>{{post.body|safe}}</p>
                                 </div>
                             </div>
                         </div>
@@ -75,10 +75,8 @@
                         </form>
                     </div>
                     <!--End Faq Form-->
-
                 </div>
             </div>
-
         </div>
     </div>
 

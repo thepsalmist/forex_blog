@@ -36,10 +36,10 @@
             </div>
             <ul class="social-icon-one alternate">
                 <li class="facebook"><a href="#"><span class="fab fa-facebook"></span></a></li>
-                <li class="twitter"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                <li class="twitter"><a href="https://twitter.com/Quantfx2"><span class="fab fa-twitter"></span></a></li>
                 <li class="g_plus"><a href="#"><span class="fab fa-medium"></span></a></li>
                 <li class="pinteret"><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                <li class="twitter"><a href="#"><span class="fab fa-telegram"></span></a></li>
+                <li class="twitter"><a href="https://t.me/forexquantfx"><span class="fab fa-telegram"></span></a></li>
 
             </ul>
         </div>
@@ -68,6 +68,7 @@
                     <ul class="tab-btns tab-buttons clearfix">
                         <li data-tab="#prod-popular" class="tab-btn active-btn">Popular</li>
                         <li data-tab="#prod-recent" class="tab-btn">Latest</li>
+                        <li data-tab="#prod-faq" class="tab-btn">Forex Faq</li>
                     </ul>
 
                     <!--Tabs Container-->
@@ -105,6 +106,18 @@
                                 </article>
                                 {% endfor %}
                             </div>
+                        </div>
+                        <div class="tab" id="prod-faq">
+                            {% for post in faqs%}
+                            <article class="widget-post">
+                                <figure class="post-thumb"><a href="{{post.get_absolute_url}}"><img
+                                            src="{{post.thumbnail.url}}" alt=""></a>
+                                    <div class="overlay"><span class="icon qb-play-arrow"></span></div>
+                                </figure>
+                                <div class="text"><a href="{{post.thumbnail.url}}">{{post.title}}</a></div>
+                                <div class="post-info">{{post.publish}}</div>
+                            </article>
+                            {% endfor %}
                         </div>
                     </div>
 

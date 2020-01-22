@@ -18,8 +18,9 @@ def get_category_count():
 def post_list(request, category_slug=None):
     posts = Post.published.exclude(category__title="faq")
     videos = Video.objects.all()
-    latest_posts = Post.published.order_by("-publish")[:4]
-    popular = Post.published.order_by("-view_count")[:5]
+    latest_posts = posts.order_by("-publish")[:4]
+    popular = posts.order_by("-view_count")[:5]
+    faqs = Post.published.filter(category__title="faq")
     category = None
     categories = Category.objects.exclude(title="faq")
     if category_slug:
@@ -54,6 +55,7 @@ def post_list(request, category_slug=None):
         "category_count": category_count,
         "page": page,
         "latest_posts": latest_posts,
+        "faqs": faqs,
     }
     return render(request, "blog/index.html", context)
 
