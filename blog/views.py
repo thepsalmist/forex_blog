@@ -16,12 +16,12 @@ def get_category_count():
 
 
 def post_list(request, category_slug=None):
-    posts = Post.published.all()
+    posts = Post.published.exclude(category__title="faq")
     videos = Video.objects.all()
     latest_posts = Post.published.order_by("-publish")[:4]
     popular = Post.published.order_by("-view_count")[:5]
     category = None
-    categories = Category.objects.all()
+    categories = Category.objects.exclude(title="faq")
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         posts = posts.filter(category=category)
