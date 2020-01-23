@@ -5,7 +5,7 @@ from .forms import FaqForm
 
 
 def faq(request):
-    posts = ForexFaq.objects.all()
+    faqs = ForexFaq.objects.all()
     if request.method == "POST":
         form = FaqForm(request.POST)
         if form.is_valid:
@@ -14,5 +14,5 @@ def faq(request):
             messages.success(request, f" Thank you {name} for your question")
     else:
         form = FaqForm()
-    context = {"posts": posts, "form": form}
+    context = {"faqs": faqs, "form": form}
     return render(request, "faq/faq.html", context)

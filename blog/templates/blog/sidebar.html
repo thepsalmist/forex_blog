@@ -107,20 +107,7 @@
                                 {% endfor %}
                             </div>
                         </div>
-                        <div class="tab" id="prod-faq">
-                            <div class="content">
-                                {% for post in faqs %}
-                                <article class="widget-post">
-                                    <figure class="post-thumb"><a href="{{post.get_absolute_url}}"><img
-                                                src="{{post.thumbnail.url}}" alt=""></a>
-                                        <div class="overlay"><span class="icon qb-play-arrow"></span></div>
-                                    </figure>
-                                    <div class="text"><a href="{{post.thumbnail.url}}">{{post.title}}</a></div>
-                                    <div class="post-info">{{post.publish}}</div>
-                                </article>
-                                {% endfor %}
-                            </div>
-                        </div>
+                        {% include "faq/faq_sidebar.html" with faqs=faqs %}
                     </div>
 
                 </div>
