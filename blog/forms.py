@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comment, Contact, Faq
+from .models import Comment, Contact
 
 
 class CommentForm(forms.ModelForm):
@@ -20,16 +20,3 @@ class ContactForm(forms.ModelForm):
             "message": forms.Textarea(attrs={"placeholder": "Message...", "rows": 20}),
         }
 
-
-class FaqForm(forms.ModelForm):
-    class Meta:
-        model = Faq
-        fields = ("name", "email", "subject", "message")
-        widgets = {
-            "name": forms.TextInput(attrs={"placeholder": "Your Name*"}),
-            "email": forms.TextInput(attrs={"placeholder": "Your Email"}),
-            "subject": forms.TextInput(attrs={"placeholder": "Subject"}),
-            "message": forms.Textarea(
-                attrs={"placeholder": "Your Question", "rows": 20}
-            ),
-        }

@@ -29,6 +29,7 @@ SECRET_KEY = config("SECRET_KEY")
 INSTALLED_APPS = [
     "marketting.apps.MarkettingConfig",
     "shop.apps.ShopConfig",
+    "faq.apps.FaqConfig",
     "users.apps.UsersConfig",
     "blog.apps.BlogConfig",
     "core.apps.CoreConfig",

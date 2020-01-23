@@ -28,7 +28,6 @@ class Category(models.Model):
         ("education", "EDUCATION"),
         ("analysis", "ANALYSIS"),
         ("news", "NEWS"),
-        ("faq", "FAQ"),
     )
     title = models.CharField(
         choices=CATEGORY_CHOICES, max_length=100, default="currency"
@@ -134,12 +133,3 @@ class Contact(models.Model):
     def __str__(self):
         return f"Message by {self.name} "
 
-
-class Faq(models.Model):
-    name = models.CharField(max_length=200)
-    email = models.EmailField()
-    subject = models.CharField(max_length=100)
-    message = models.TextField()
-
-    def __str__(self):
-        return f"Question by {self.name}"

@@ -7,7 +7,6 @@ from .views import (
     analysis,
     education,
     news,
-    faq,
     contact,
     privacy,
     terms_of_use,
@@ -19,7 +18,6 @@ urlpatterns = [
     path("", views.post_list, name="home"),
     path("search/", views.search, name="search"),
     path("contact/", views.contact, name="contact"),
-    path("faq/", views.faq, name="faq"),
     path(
         "category/<slug:category_slug>/", views.post_list, name="post_list_by_category"
     ),

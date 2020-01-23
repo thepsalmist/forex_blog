@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from .models import Post, Category, Comment, Video
-from .forms import CommentForm, ContactForm, FaqForm
+from .forms import CommentForm, ContactForm
 from marketting.models import SignUp
 
 
@@ -16,13 +16,12 @@ def get_category_count():
 
 
 def post_list(request, category_slug=None):
-    posts = Post.published.exclude(category__title="faq")
+    posts = Post.published.all()
     videos = Video.objects.all()
-    latest_posts = posts.order_by("-publish")[:4]
-    popular = posts.order_by("-view_count")[:5]
-    faqs = Post.published.filter(category__title="faq")
+    latest_posts = Post.published.order_by("-publish")[:4]
+    popular = Post.published.order_by("-view_count")[:5]
     category = None
-    categories = Category.objects.exclude(title="faq")
+    categories = Category.objects.all()
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         posts = posts.filter(category=category)
@@ -55,7 +54,6 @@ def post_list(request, category_slug=None):
         "category_count": category_count,
         "page": page,
         "latest_posts": latest_posts,
-        "faqs": faqs,
     }
     return render(request, "blog/index.html", context)
 
@@ -122,20 +120,6 @@ def contact(request):
 
     context = {"form": form}
     return render(request, "blog/contact.html", context)
-
-
-def faq(request):
-    posts = Post.published.filter(category__title="faq")
-    if request.method == "POST":
-        form = FaqForm(request.POST)
-        if form.is_valid:
-            form.save()
-            name = form.cleaned_data.get("name")
-            messages.success(request, f" Thank you {name} for your question")
-    else:
-        form = FaqForm()
-    context = {"posts": posts, "form": form}
-    return render(request, "blog/faq.html", context)
 
 
 @login_required
