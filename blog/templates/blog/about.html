@@ -1,0 +1,74 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title%} Quantfx | About Us {% endblock %}
+{% block content %}
+
+{% include "blog/header.html" %}
+<!--Page Title-->
+<section class="page-title">
+    <div class="auto-container">
+        <div class="clearfix">
+            <div class="pull-left">
+                <h2>About Quantfx</h2>
+            </div>
+            <div class="pull-right">
+                <ul class="page-title-breadcrumb">
+                    <li><a href="{% url 'blog:home' %}"><span class="fa fa-home"></span>Home</a></li>
+                    <li>About</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+<!--About Section Three-->
+<section class="about-section-three">
+    <div class="auto-container">
+        <!--Title-->
+        <div class="upper-title">
+            <h1>Quantfx | The Best Forex News, Education and Analysis </h1>
+            <div class="text">We are your best partner in your journey as a forex trader</div>
+        </div>
+
+        <!--Contetn Block-->
+        <div class="content-block">
+            <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-lg-8 col-md-8 col-sm-12">
+                    <div class="inner">
+                        <h2>Who We Are</h2>
+                        <p>Quantfx strives to become your best partner in matters forex, indices and commodities
+                            trading. We provide you with the best news, analysis and education material</p>
+                        <p>We are a group of traders, editors and financial analysts with cummulative experience of over
+                            10 years. We are dedicated towards providing the best forex content for beginners,
+                            intermediae and advanced traders.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Contetn Block-->
+        <div class="content-block">
+            <div class="row clearfix">
+
+                <!--Text Column-->
+                <div class="text-column col-lg-8 col-md-8 col-sm-12">
+                    <div class="inner">
+                        <h2>Our Vision</h2>
+                        <p>We aim to provide the best content on forex trading and therefore empower a generation of
+                            skilled and independent traders </p>
+                        <p>We would like to use our platform to educate and provide a community around forex trading.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include "blog/newsletter.html" %}
+{% include "blog/footer.html"%}
+
+{% endblock content%}

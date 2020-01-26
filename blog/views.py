@@ -162,3 +162,7 @@ def privacy(request):
 
 def terms_of_use(request):
     return render(request, "blog/terms_of_use.html", context={})
+
+
+def about_us(request):
+    return render(request, "blog/about.html", context={})

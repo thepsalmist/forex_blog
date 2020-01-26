@@ -10,6 +10,7 @@ from .views import (
     contact,
     privacy,
     terms_of_use,
+    about_us,
 )
 
 app_name = "blog"
@@ -18,6 +19,7 @@ urlpatterns = [
     path("", views.post_list, name="home"),
     path("search/", views.search, name="search"),
     path("contact/", views.contact, name="contact"),
+    path("about/", views.about_us, name="about_us"),
     path(
         "category/<slug:category_slug>/", views.post_list, name="post_list_by_category"
     ),
