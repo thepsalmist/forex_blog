@@ -2,6 +2,20 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load social_share %}
+{%block ads%}
+<script data-ad-client="ca-pub-1810260271665361" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155992920-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-155992920-1');
+</script>
+{%endblock%}
+
 {% block meta%} {{post.description}}{%endblock%}
 {% block keyword%}{% for tag in post.tags.all%}{{tag.name}} {% endfor %} {%endblock%}
 
