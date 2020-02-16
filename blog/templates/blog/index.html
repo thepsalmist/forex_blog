@@ -47,7 +47,7 @@
                                 <div class="inner-box">
                                     <div class="image">
                                         <a href="{{post.get_absolute_url}}"><img src="{{post.thumbnail.url}}"
-                                                alt="" /></a>
+                                                alt="{{post.title}}" /></a>
                                     </div>
                                     <div class="lower-box">
                                         <div>
@@ -96,12 +96,12 @@
                     <br><br>
                     <!--Adds Section-->
                     <section class="adds-block text-center">
-                        <div class="image">
+                        <!-- <div class="image">
                             <a href="https://fbs.com/promo/trade-100usd?ppu=13696814" target="_blank"
                                 style="outline: none"><img
                                     src="https://fbs.com/upload/promo/banner/241a1e5e9a9925d241107026b7e65de0.gif?ppu=13696814"
                                     width="728" height="90" border="0"></a>
-                        </div>
+                        </div> -->
                     </section>
                     <!--End Adds Section-->
                     <br><br>
@@ -118,7 +118,7 @@
                                 {% for video in videos %}
                                 <div class="inner-box">
                                     <div class="image">
-                                        <img src="{{video.thumbnail.url}}" alt="" />
+                                        <img src="{{video.thumbnail.url}}" alt="{{video.title}}" />
                                         <div class="overlay-box">
                                             <a href="{{video.url}}" target="_blank" class="play-btn"><span
                                                     class="fas fa-play"></span></a>
