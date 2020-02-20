@@ -31,6 +31,7 @@ urlpatterns = [
     path("shop/", include("shop.urls", namespace="shop")),
     path("faq/", include("faq.urls", namespace="faq")),
     path("", include("blog.urls", namespace="blog")),
+    path("api/blog", include("blog.api.urls", namespace="blog_api")),
     path("tinymce/", include("tinymce.urls")),
     path(
         "sitemap.xml",
